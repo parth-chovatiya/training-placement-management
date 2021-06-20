@@ -1,16 +1,13 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+
 
 const CompanySchema = new mongoose.Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-  },
   password: {
     type: String,
     required: true,
   },
-  name: {
+  orgname: {
     type: String,
     required: true,
   },
@@ -22,8 +19,15 @@ const CompanySchema = new mongoose.Schema({
   },
   interviewDate: Date,
   hrname: String,
-  hremail: String,
-  hrmobile: String,
+  hremail: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  hrmobile: {
+    type: Number,
+    required: true
+  },
   branch: [
     {
       type: String,
@@ -31,6 +35,13 @@ const CompanySchema = new mongoose.Schema({
   ],
   cgpa: Number,
 });
+
+CompanySchema.pre("save", async function(next) {
+  if(this.isModified('password')){
+    this.password = await bcrypt.hash(this.password, 12);
+  }
+  next()
+})
 
 const Company = mongoose.model("Company", CompanySchema);
 
