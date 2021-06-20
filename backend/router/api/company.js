@@ -107,7 +107,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.get('/dashboard', auth, (req, res) => {
-  res.status(200).send("Company Deshboard.")
+  res.status(200).send(req.company)
 })
 
 module.exports = router;
