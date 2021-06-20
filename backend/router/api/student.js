@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 const config = require("config");
-const SECRET_KEY = config.get("SECRET_KEY");
+const auth = require("../../middleware/student_auth");
 
 
 router.get("/", (req, res) => {
@@ -59,6 +59,7 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ error: "Please Fill all fields." });
     }
     const studentLogin = await Student.findOne({ roll: roll })
+    // console.log(studentLogin)
     if (!studentLogin) {
       res.json({ error: "Student Not Exist." });
     } else {
@@ -66,7 +67,7 @@ router.post("/login", async (req, res) => {
       if (!isMatch) {
         res.status(400).json({ error: "Invalid Credientials" });
       } else {
-        let token = jwt.sign({_id: this._id}, SECRET_KEY)
+        let token = jwt.sign({_id: studentLogin._id}, config.get("jwtSecret"))
         console.log(token);
         res.cookie("jwttoken", token, {
           expires: new Date(Date.now() + 25892000000),
@@ -79,5 +80,9 @@ router.post("/login", async (req, res) => {
     console.log(err);
   }
 });
+
+router.get('/dashboard', auth, (req, res) => {
+  res.status(200).send("Student dashboard")
+})
 
 module.exports = router;

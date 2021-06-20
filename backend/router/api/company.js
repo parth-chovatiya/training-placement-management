@@ -5,7 +5,9 @@ const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const SECRET_KEY = config.get("SECRET_KEY");
+const auth = require("../../middleware/company_auth");
+
+
 
 router.get("/", (req, res) => {
   res.send("Hello Word from student");
@@ -90,7 +92,7 @@ router.post("/login", async (req, res) => {
       if (!isMatch) {
         res.status(400).json({ error: "Invalid Credientials" });
       } else {
-        let token = jwt.sign({ _id: this._id }, SECRET_KEY);
+        let token = jwt.sign({ _id: companyLogin._id }, config.get("jwtSecret"));
         console.log(token);
         res.cookie("jwttoken", token, {
           expires: new Date(Date.now() + 25892000000),
@@ -103,5 +105,9 @@ router.post("/login", async (req, res) => {
     console.log(err);
   }
 });
+
+router.get('/dashboard', auth, (req, res) => {
+  res.status(200).send("Company Deshboard.")
+})
 
 module.exports = router;
