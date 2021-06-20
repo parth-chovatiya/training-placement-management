@@ -12,7 +12,7 @@ app.use(morgan('dev'))
 app.get("/", (req, res) => res.send("API Running"));
 
 //route files
-// app.use("/api/student", require("./router/api/student"));
+app.use("/api/student", require("./router/api/student"));
 app.use("/api/company", require("./router/api/company"));
 
 
