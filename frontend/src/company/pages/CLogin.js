@@ -57,9 +57,9 @@ export default function CLogin() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign in as Company
         </Typography>
-        <form className={classes.form} noValidate>
+        <form method="POST" className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -102,7 +102,7 @@ export default function CLogin() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/company/register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

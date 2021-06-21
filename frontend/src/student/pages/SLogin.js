@@ -1,27 +1,29 @@
-import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import React, { useState } from "react";
+import { useHistory} from "react-router-dom";
+
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Link from "@material-ui/core/Link";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
-      </Link>{' '}
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 }
@@ -29,16 +31,16 @@ function Copyright() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -47,7 +49,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SLogin() {
+  const [roll, setRoll] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
   const classes = useStyles();
+
+  const loginStudent = async (event) => {
+    event.preventDefault();
+    console.log(roll);
+    console.log(password);
+    // -------------------
+    const res = await fetch("/api/student/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        roll,
+        password,
+      }),
+    });
+    const data = res.json();
+    console.log(data);
+    if (res.status === 400 || !data) {
+      window.alert("Invalid Credentials");
+    } else {
+      // dispatch({type: 'USER', payload: true})
+      window.alert("Login Successfully");
+      history.push("/");
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -57,9 +88,9 @@ export default function SLogin() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign in as Student
         </Typography>
-        <form className={classes.form} noValidate>
+        <form method="POST" className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -70,6 +101,8 @@ export default function SLogin() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={roll}
+            onChange={(e) => setRoll(e.target.value)}
           />
           <TextField
             variant="outlined"
@@ -81,6 +114,8 @@ export default function SLogin() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -92,6 +127,7 @@ export default function SLogin() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={loginStudent}
           >
             Sign In
           </Button>
@@ -102,7 +138,7 @@ export default function SLogin() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/student/register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

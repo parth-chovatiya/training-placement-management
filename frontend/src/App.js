@@ -10,7 +10,13 @@ import Home from './Home/pages/Home'
 import Navbar from './shared/components/Navigation/Navbar'
 import SLogin from "./student/pages/SLogin";
 import CLogin from "./company/pages/CLogin";
+import SRegister from "./student/pages/SRegister";
+import CRegister from "./company/pages/CRegister";
+import SDashboard from "./student/pages/SDashboard";
+import CDashboard from "./company/pages/CDashboard";
 import './App.css'
+
+import Checkout from "./student/pages/Checkout";
 
 function App() {
   return (
@@ -27,11 +33,18 @@ function App() {
           <Route path="/company/login">
             <CLogin />
           </Route>
+          <Route path="/student/register">
+            {/* <SRegister /> */}
+            <Checkout />
+          </Route>
+          <Route path="/company/register">
+            <CRegister />
+          </Route>
           <Route path="/student/dashboard">
-            {/* <Sdashboard /> */}
+            <SDashboard />
           </Route>
           <Route path="/company/dashboard">
-            {/* <Cdashboard /> */}
+            <CDashboard />
           </Route>
           <Redirect to="/" />
         </Switch>
