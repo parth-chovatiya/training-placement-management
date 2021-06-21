@@ -73,7 +73,7 @@ router.post("/login", async (req, res) => {
           expires: new Date(Date.now() + 25892000000),
           httpOnly: true,
         });
-        res.json({ message: "Login Successfully." });
+        res.json({ message: "Login Successfully.", user: studentLogin });
       }
     }
   } catch (err) {
