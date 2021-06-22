@@ -11,10 +11,15 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 export default function PaymentForm() {
-  const [branch, setBranch] = React.useState('');
+  const [department, setDepartment] = React.useState('');
+  const [tech, setTech] = React.useState('');
 
-  const handleChange = (event) => {
-    setBranch(event.target.value);
+  const handleTechChange = (event) => {
+    setTech(event.target.value);
+  };
+
+  const handleDepartmentChange = (event) => {
+    setDepartment(event.target.value);
   };
 
   return (
@@ -23,9 +28,31 @@ export default function PaymentForm() {
         Academic details
       </Typography>
       <Grid container spacing={3}>
-        {/* <Grid item xs={12}>
-          <TextField required id="cardName" label="Branch" fullWidth autoComplete="cc-name" />
-        </Grid> */}
+        <Grid item xs={12}>
+          {/* <TextField 
+            required 
+            id="cardName" 
+            label="Branch" 
+            fullWidth 
+            autoComplete="cc-name" 
+          /> */}
+          <FormControl 
+            required
+            fullWidth
+          >
+            <InputLabel id="demo-simple-select-label">Tech</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={tech}
+              onChange={handleTechChange}
+              >
+              <MenuItem value={"btech"}>B.Tech</MenuItem>
+              <MenuItem value={"mtech"}>M.Tech</MenuItem>
+              <MenuItem value={"phd"}>PHD</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
         <Grid item xs={12}>
           {/* <TextField
             required
@@ -38,12 +65,12 @@ export default function PaymentForm() {
             required
             fullWidth
           >
-            <InputLabel id="demo-simple-select-label">Branch</InputLabel>
+            <InputLabel id="demo-simple-select-label">Department</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={branch}
-              onChange={handleChange}
+              value={department}
+              onChange={handleDepartmentChange}
               >
               <MenuItem value={"Computer Engineering"}>Computer Engineering</MenuItem>
               <MenuItem value={"Civil Engineering"}>Civil Engineering</MenuItem>

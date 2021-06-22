@@ -13,14 +13,14 @@ import Select from '@material-ui/core/Select';
 export default function AddressForm() {
   const [gender, setGender] = React.useState('');
 
-  const handleChange = (event) => {
+  const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
 
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Shipping address
+        About your self
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12}>
@@ -123,7 +123,7 @@ export default function AddressForm() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={gender}
-              onChange={handleChange}
+              onChange={handleGenderChange}
               >
               <MenuItem value={"Male"}>Male</MenuItem>
               <MenuItem value={"Female"}>Female</MenuItem>
