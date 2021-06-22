@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useHistory } from 'react';
 import {
   Stepper,
   Step,
@@ -43,6 +43,7 @@ export default function SRegisterForm() {
   const isLastStep = activeStep === steps.length - 1;
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  // const history = useHistory();
 
   function _sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -50,7 +51,29 @@ export default function SRegisterForm() {
 
   async function _submitForm(values, actions) {
     await _sleep(1000);
-    alert(JSON.stringify(values, null, 2));
+
+    const res = await fetch("/api/student/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        values
+      })
+    })
+    const data = await res.json();
+    if(data.status === 422 || !data){
+      window.alert("Invalid Registration")
+      console.log("Invalid Registration")
+    }
+    else{
+      window.alert("Successfull Registration")
+      console.log("Successfull Registration")
+
+      // history.push('/student/login')
+    }
+    // alert(JSON.stringify(values, null, 2));
+
     setId('19CP023');
     setPassword('123456');
     actions.setSubmitting(false);

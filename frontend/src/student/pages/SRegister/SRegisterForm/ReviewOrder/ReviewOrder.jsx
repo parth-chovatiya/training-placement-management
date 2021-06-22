@@ -7,7 +7,7 @@ import PaymentDetails from './PaymentDetails';
 
 export default function ReviewOrder() {
   const { values: formValues } = useFormikContext();
-  console.log(formValues)
+  // console.log(formValues)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

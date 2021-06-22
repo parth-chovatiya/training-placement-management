@@ -49,14 +49,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SLogin() {
-  const [roll, setRoll] = useState("");
+  const [studentId, setStudentIs] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
   const classes = useStyles();
 
   const loginStudent = async (event) => {
     event.preventDefault();
-    console.log(roll);
+    console.log(studentId);
     console.log(password);
     // -------------------
     const res = await fetch("/api/student/login/", {
@@ -65,7 +65,7 @@ export default function SLogin() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        roll,
+        studentId,
         password,
       }),
     });
@@ -101,8 +101,8 @@ export default function SLogin() {
             name="email"
             autoComplete="email"
             autoFocus
-            value={roll}
-            onChange={(e) => setRoll(e.target.value)}
+            value={studentId}
+            onChange={(e) => setStudentIs(e.target.value)}
           />
           <TextField
             variant="outlined"
