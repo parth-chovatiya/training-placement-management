@@ -18,6 +18,9 @@ import './App.css'
 
 import Checkout from "./student/pages/Checkout";
 
+import MaterialLayout from './student/pages/components/Layout/MaterialLayout'
+import CheckoutPage from './student/pages/components/CheckoutPage'
+
 function App() {
   return (
     <Router>
@@ -26,6 +29,11 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/temp" exact>
+          <MaterialLayout>
+            <CheckoutPage />
+          </MaterialLayout>
           </Route>
           <Route path="/student/login">
             <SLogin />
