@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 
-import AddressForm from './Forms/AddressForm';
-import PaymentForm from './Forms/PaymentForm';
+import AddressForm from './Forms/AboutYourSelfForm';
+import PaymentForm from './Forms/AcademicDetailsForm';
 import ReviewOrder from './ReviewOrder';
 import CheckoutSuccess from './CheckoutSuccess';
 
@@ -36,7 +36,7 @@ function _renderStepContent(step) {
   }
 }
 
-export default function CheckoutPage() {
+export default function SRegisterForm() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = validationSchema[activeStep];

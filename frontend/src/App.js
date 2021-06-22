@@ -10,16 +10,14 @@ import Home from './Home/pages/Home'
 import Navbar from './shared/components/Navigation/Navbar'
 import SLogin from "./student/pages/SLogin";
 import CLogin from "./company/pages/CLogin";
-import SRegister from "./student/pages/SRegister";
 import CRegister from "./company/pages/CRegister";
 import SDashboard from "./student/pages/SDashboard";
 import CDashboard from "./company/pages/CDashboard";
 import './App.css'
 
-import Checkout from "./student/pages/Checkout";
 
-import MaterialLayout from './student/pages/components/Layout/MaterialLayout'
-import CheckoutPage from './student/pages/components/CheckoutPage'
+import MaterialLayout from './student/pages/SRegister/Layout/MaterialLayout'
+import SRegisterForm from './student/pages/SRegister/SRegisterForm'
 
 function App() {
   return (
@@ -30,11 +28,6 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/temp" exact>
-          <MaterialLayout>
-            <CheckoutPage />
-          </MaterialLayout>
-          </Route>
           <Route path="/student/login">
             <SLogin />
           </Route>
@@ -42,8 +35,9 @@ function App() {
             <CLogin />
           </Route>
           <Route path="/student/register">
-            {/* <SRegister /> */}
-            <Checkout />
+            <MaterialLayout>
+              <SRegisterForm />
+            </MaterialLayout>
           </Route>
           <Route path="/company/register">
             <CRegister />

@@ -52,7 +52,7 @@ const departments = [
   },
 ];
 
-export default function PaymentForm(props) {
+export default function AcademicDetailsForm(props) {
   const {
     formField: { coursetype, department, passingyear, cgpa },
   } = props;
