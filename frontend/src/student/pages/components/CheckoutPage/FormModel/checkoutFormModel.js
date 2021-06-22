@@ -19,7 +19,8 @@ export default {
     aadhaarNo: {
       name: 'aadhaarNo',
       label: 'Aadhaar No*',
-      requiredErrorMsg: 'Aadhaar No is required'
+      requiredErrorMsg: 'Aadhaar No is required',
+      invalidErrorMsg: 'Aadhaar No. is not valid (It must be 12 digit)'
     },
     email: {
       name: 'email',
@@ -46,16 +47,6 @@ export default {
       label: 'Religion*',
       requiredErrorMsg: 'Religion is required'
     },
-    // firstName: {
-    //   name: 'firstName',
-    //   label: 'First name*',
-    //   requiredErrorMsg: 'First name is required'
-    // },
-    // lastName: {
-    //   name: 'lastName',
-    //   label: 'Last name*',
-    //   requiredErrorMsg: 'Last name is required'
-    // },
     address1: {
       name: 'address1',
       label: 'Address Line 1*',
@@ -78,7 +69,7 @@ export default {
       name: 'zipcode',
       label: 'Zip / Postal code*',
       requiredErrorMsg: 'Zip / Postal code is required',
-      invalidErrorMsg: 'Zipcode is not valid (e.g. 70000)'
+      invalidErrorMsg: 'Zipcode is not valid (e.g. 700000)'
     },
     country: {
       name: 'country',
@@ -94,10 +85,10 @@ export default {
     //   label: 'Name on card*',
     //   requiredErrorMsg: 'Name on card is required'
     // },
-    tech: {
-      name: 'tech',
-      label: 'Tech*',
-      requiredErrorMsg: 'Tech is required'
+    coursetype: {
+      name: 'coursetype',
+      label: 'Course Type*',
+      requiredErrorMsg: 'Course Type is required'
     },
     department: {
       name: 'department',
