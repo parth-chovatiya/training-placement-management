@@ -19,6 +19,9 @@ import './App.css'
 import MaterialLayout from './student/pages/SRegister/Layout/MaterialLayout'
 import SRegisterForm from './student/pages/SRegister/SRegisterForm'
 
+import MaterialLayout1 from "./company/pages/CRegister/Layout/MaterialLayout";
+import SRegisterForm1 from './company/pages/CRegister/SRegisterForm'
+
 function App() {
   return (
     <Router>
@@ -40,7 +43,9 @@ function App() {
             </MaterialLayout>
           </Route>
           <Route path="/company/register">
-            <CRegister />
+            <MaterialLayout1>
+              <SRegisterForm1 />
+            </MaterialLayout1>
           </Route>
           <Route path="/student/dashboard">
             <SDashboard />

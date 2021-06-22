@@ -85,6 +85,7 @@ router.post("/add", async (req, res) => {
         passingyear,
         cgpa,
       });
+      // save in cookie 
       console.log("Your Password is : ", password);
       // password hash
       const studentRegister = await student.save();
