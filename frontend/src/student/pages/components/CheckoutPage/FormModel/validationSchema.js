@@ -14,6 +14,7 @@ const {
     religion,
     address1,
     city,
+    state,
     zipcode,
     country,
     coursetype,
@@ -48,6 +49,7 @@ export default [
     [religion.name]: Yup.string().required(`${religion.requiredErrorMsg}`),
     [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
     [city.name]: Yup.string().nullable().required(`${city.requiredErrorMsg}`),
+    [state.name]: Yup.string().nullable().required(`${state.requiredErrorMsg}`),
     [zipcode.name]: Yup.string()
       .required(`${zipcode.requiredErrorMsg}`)
       .test(
@@ -63,7 +65,7 @@ export default [
     // [nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
     [coursetype.name]: Yup.string().required(`${coursetype.requiredErrorMsg}`),
     [department.name]: Yup.string().required(`${department.requiredErrorMsg}`),
-    [passingyear.name]: Yup.string().required(
+    [passingyear.name]: Yup.number().required(
       `${passingyear.requiredErrorMsg}`
     ),
     [cgpa.name]: Yup.string().required(`${cgpa.requiredErrorMsg}`),

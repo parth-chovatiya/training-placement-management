@@ -33,13 +33,12 @@ export default function AddressForm(props) {
       state,
       zipcode,
       country,
-      useAddressForPaymentDetails
     }
   } = props;
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Shipping address
+        About your self
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12}>

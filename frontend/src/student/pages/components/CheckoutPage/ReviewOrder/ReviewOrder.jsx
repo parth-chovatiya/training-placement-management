@@ -7,16 +7,17 @@ import PaymentDetails from './PaymentDetails';
 
 export default function ReviewOrder() {
   const { values: formValues } = useFormikContext();
+  console.log(formValues)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Order summary
+        Your Data
       </Typography>
-      <ProductDetails />
-      <Grid container spacing={2}>
+      <ProductDetails formValues={formValues} />
+      {/* <Grid container spacing={2}>
         <ShippingDetails formValues={formValues} />
         <PaymentDetails formValues={formValues} />
-      </Grid>
+      </Grid> */}
     </React.Fragment>
   );
 }

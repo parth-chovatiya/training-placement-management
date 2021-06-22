@@ -2,29 +2,84 @@ import React from 'react';
 import { Typography, List, ListItem, ListItemText } from '@material-ui/core';
 import useStyles from './styles';
 
-const products = [
-  { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },
-  { name: 'Product 2', desc: 'Another thing', price: '$3.45' },
-  { name: 'Product 3', desc: 'Something else', price: '$6.51' },
-  { name: 'Product 4', desc: 'Best thing of all', price: '$14.11' },
-  { name: 'Shipping', desc: '', price: 'Free' }
-];
 
-function ProductDetails() {
+function ProductDetails(props) {
+  const { formValues } = props;
   const classes = useStyles();
+
   return (
     <List disablePadding>
-      {products.map(product => (
-        <ListItem className={classes.listItem} key={product.name}>
-          <ListItemText primary={product.name} secondary={product.desc} />
-          <Typography variant="body2">{product.price}</Typography>
-        </ListItem>
-      ))}
       <ListItem className={classes.listItem}>
-        <ListItemText primary="Total" />
-        <Typography variant="subtitle1" className={classes.total}>
-          $34.06
-        </Typography>
+        <ListItemText primary={"Full Name"} />
+        <Typography variant="body2">{formValues.fullName}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Student Id No."} />
+        <Typography variant="body2">{formValues.studentId}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Enrolement No."} />
+        <Typography variant="body2">{formValues.enrolementNo}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Aadhaar No."} />
+        <Typography variant="body2">{formValues.aadhaarNo}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Email Id"} />
+        <Typography variant="body2">{formValues.email}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Contact No."} />
+        <Typography variant="body2">{formValues.contact}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Date of Birth"} />
+        <Typography variant="body2">{formValues.dob}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Gender"} />
+        <Typography variant="body2">{formValues.gender}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Religion"} />
+        <Typography variant="body2">{formValues.religion}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Address"} />
+        <Typography variant="body2">{formValues.address1} {formValues.address2}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"City"} />
+        <Typography variant="body2">{formValues.city}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"State"} />
+        <Typography variant="body2">{formValues.state}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Zip / Postal Code"} />
+        <Typography variant="body2">{formValues.zipcode}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Country"} />
+        <Typography variant="body2">{formValues.country}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Cource Type"} />
+        <Typography variant="body2">{formValues.coursetype}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Department"} />
+        <Typography variant="body2">{formValues.department}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"Passing Year"} />
+        <Typography variant="body2">{formValues.passingyear}</Typography>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <ListItemText primary={"CGPA"} />
+        <Typography variant="body2">{formValues.cgpa}</Typography>
       </ListItem>
     </List>
   );

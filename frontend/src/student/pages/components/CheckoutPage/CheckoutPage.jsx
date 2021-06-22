@@ -20,7 +20,7 @@ import formInitialValues from './FormModel/formInitialValues';
 
 import useStyles from './styles';
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['About your self', 'Academic details', 'Review your data'];
 const { formId, formField } = checkoutFormModel;
 
 function _renderStepContent(step) {
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
   return (
     <React.Fragment>
       <Typography component="h1" variant="h4" align="center">
-        Checkout
+        Register
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
         {steps.map(label => (
@@ -111,7 +111,7 @@ export default function CheckoutPage() {
                       color="primary"
                       className={classes.button}
                     >
-                      {isLastStep ? 'Place order' : 'Next'}
+                      {isLastStep ? 'Submit' : 'Next'}
                     </Button>
                     {isSubmitting && (
                       <CircularProgress

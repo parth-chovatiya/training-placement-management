@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
-import { InputField, SelectField, DatePickerField } from "../../FormFields";
+import { InputField, SelectField } from "../../FormFields";
 
 const techs = [
   {
@@ -60,10 +60,10 @@ export default function PaymentForm(props) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-        Payment method
+        Academic details
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12}>
           <SelectField
             name={coursetype.name}
             label={coursetype.label}
@@ -71,7 +71,7 @@ export default function PaymentForm(props) {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12}>
           <SelectField
             name={department.name}
             label={department.label}
