@@ -16,11 +16,11 @@ import CDashboard from "./company/pages/CDashboard";
 import './App.css'
 
 
-import MaterialLayout from './student/pages/SRegister/Layout/MaterialLayout'
-import SRegisterForm from './student/pages/SRegister/SRegisterForm'
+import SMaterialLayout from './student/pages/SRegister/Layout/MaterialLayout'
+import SSRegisterForm from './student/pages/SRegister/SRegisterForm'
 
-import MaterialLayout1 from "./company/pages/CRegister/Layout/MaterialLayout";
-import SRegisterForm1 from './company/pages/CRegister/SRegisterForm'
+import CMaterialLayout from "./company/pages/CRegister/Layout/MaterialLayout";
+import CSRegisterForm from './company/pages/CRegister/CRegisterForm'
 
 function App() {
   return (
@@ -38,14 +38,14 @@ function App() {
             <CLogin />
           </Route>
           <Route path="/student/register">
-            <MaterialLayout>
-              <SRegisterForm />
-            </MaterialLayout>
+            <SMaterialLayout>
+              <SSRegisterForm />
+            </SMaterialLayout>
           </Route>
           <Route path="/company/register">
-            <MaterialLayout1>
-              <SRegisterForm1 />
-            </MaterialLayout1>
+            <CMaterialLayout>
+              <CSRegisterForm />
+            </CMaterialLayout>
           </Route>
           <Route path="/student/dashboard">
             <SDashboard />

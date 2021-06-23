@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core';
 import { Formik, Form } from 'formik';
 
-import AddressForm from './Forms/AboutYourSelfForm';
-import PaymentForm from './Forms/AcademicDetailsForm';
+import AboutCompanyForm from './Forms/AboutCompanyForm';
+import CriteriaForm from './Forms/CriteriaForm';
 import ReviewOrder from './ReviewOrder';
 import CheckoutSuccess from './CheckoutSuccess';
 
@@ -20,15 +20,15 @@ import formInitialValues from './FormModel/formInitialValues';
 
 import useStyles from './styles';
 
-const steps = ['About your self', 'Academic details', 'Review your data'];
+const steps = ['About Company', 'Hiring Criteria details', 'Review your data'];
 const { formId, formField } = checkoutFormModel;
 
 function _renderStepContent(step) {
   switch (step) {
     case 0:
-      return <AddressForm formField={formField} />;
+      return <AboutCompanyForm formField={formField} />;
     case 1:
-      return <PaymentForm formField={formField} />;
+      return <CriteriaForm formField={formField} />;
     case 2:
       return <ReviewOrder />;
     default:
@@ -52,27 +52,27 @@ export default function SRegisterForm() {
   async function _submitForm(values, actions) {
     await _sleep(1000);
 
-    // const res = await fetch("/", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     values
-    //   })
-    // })
-    // const data = await res.json();
-    // if(data.status === 422 || !data){
-    //   window.alert("Invalid Registration")
-    //   console.log("Invalid Registration")
-    // }
-    // else{
-    //   window.alert("Successfull Registration")
-    //   console.log("Successfull Registration")
+    const res = await fetch("/api/company/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        values
+      })
+    })
+    const data = await res.json();
+    if(data.status === 422 || !data){
+      window.alert("Invalid Registration")
+      console.log("Invalid Registration")
+    }
+    else{
+      window.alert("Successfull Registration")
+      console.log("Successfull Registration")
 
-    //   // history.push('/student/login')
-    // }
-    alert(JSON.stringify(values, null, 2));
+      // history.push('/student/login')
+    }
+    // alert(JSON.stringify(values, null, 2));
 
     setId('19CP023');
     setPassword('123456');
@@ -98,7 +98,7 @@ export default function SRegisterForm() {
   return (
     <React.Fragment>
       <Typography component="h1" variant="h4" align="center">
-        Register
+        Register Your Organization
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
         {steps.map(label => (

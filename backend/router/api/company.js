@@ -14,28 +14,43 @@ router.get("/", (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
+  const {values} = req.body
   const {
     hremail,
     orgname,
-    address,
     website,
-    type,
-    interviewDate,
     hrname,
-    hrmobile,
-    branch,
+    hrcontact,
+    address1,
+    address2,
+    city,
+    state,
+    zipcode,
+    country,
+    interviewDate,
+    computerEngineering,
+    civilEngineering,
+    electricalEngineering,
+    electronicsEngineering,
+    eandcEngineering,
+    mechanicalEngineering,
+    productionEngineering,
+    informationTechnology,
     cgpa,
-  } = req.body;
+  } = values;
+  console.log(values)
   if (
     !hremail ||
     !orgname ||
-    !address ||
     !website ||
-    !type ||
-    !interviewDate ||
     !hrname ||
-    !hrmobile ||
-    !branch ||
+    !hrcontact ||
+    !address1 ||
+    !city ||
+    !state ||
+    !zipcode ||
+    !country ||
+    !interviewDate ||
     !cgpa
   ) {
     return res.status(422).json({ error: "Please Fill all fields." });
@@ -43,19 +58,34 @@ router.post("/add", async (req, res) => {
   try {
     const userExist = await Company.findOne({ hremail: hremail });
     if (userExist) {
-      return res.status(422).json({ error: "Student Already Exist." });
+      return res.status(422).json({ error: "Company Already Exist." });
     } else {
+      const branch = [
+        computerEngineering && "Computer Engineering",
+        civilEngineering && "Civil Engineering",
+        electricalEngineering && "Electrical Engineering",
+        electronicsEngineering && "Electronics Engineering",
+        eandcEngineering && "Electronics and Communication Engineering",
+        mechanicalEngineering && "Mechanical Engineering",
+        productionEngineering && "Production Engineering",
+        informationTechnology && "Information Technology",
+      ]
+      console.log(branch)
       let password = crypto.randomBytes(4).toString("hex");
       const company = new Company({
         hremail,
         password,
         orgname,
-        address,
         website,
-        type,
-        interviewDate,
         hrname,
-        hrmobile,
+        hrcontact,
+        address1,
+        address2,
+        city,
+        state,
+        zipcode,
+        country,
+        interviewDate,
         branch,
         cgpa,
       });

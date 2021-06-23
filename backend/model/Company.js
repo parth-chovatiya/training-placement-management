@@ -3,6 +3,11 @@ const bcrypt = require("bcryptjs");
 
 
 const CompanySchema = new mongoose.Schema({
+  hremail: {
+    type: String,
+    required: true,
+    unique: true
+  },
   password: {
     type: String,
     required: true,
@@ -11,23 +16,19 @@ const CompanySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  address: String,
   website: String,
-  type: {
-    type: String,
-    required: true,
-  },
-  interviewDate: Date,
   hrname: String,
-  hremail: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  hrmobile: {
+  hrcontact: {
     type: Number,
     required: true
   },
+  address1: String,
+  address2: String,
+  city: String,
+  state: String,
+  zipcode: String,
+  country: String,
+  interviewDate: String,
   branch: [
     {
       type: String,

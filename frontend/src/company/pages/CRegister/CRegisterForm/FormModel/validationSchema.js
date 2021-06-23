@@ -13,6 +13,7 @@ const {
     state,
     zipcode,
     country,
+    interviewDate,
     cgpa,
   },
 } = checkoutFormModel;
@@ -41,7 +42,7 @@ export default [
       .required(`${country.requiredErrorMsg}`),
   }),
   Yup.object().shape({
-    // [nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
+    [interviewDate.name]: Yup.string().required(`${interviewDate.requiredErrorMsg}`),
     [cgpa.name]: Yup.string().required(`${cgpa.requiredErrorMsg}`),
   }),
 ];

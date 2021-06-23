@@ -57,6 +57,12 @@ export default {
       label: 'Country *',
       requiredErrorMsg: 'Country is required'
     },
+    interviewDate: {
+      name: 'interviewDate',
+      label: 'Interview Date *',
+      requiredErrorMsg: 'Interview Date is required',
+      invalidErrorMsg: 'Interview Date is not valid'
+    },
     computerEngineering: {
       name: 'computerEngineering',
       label: 'Computer Engineering'

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
-import { InputField, CheckboxField, SelectField } from "../../FormFields";
+import { InputField, CheckboxField, DatePickerField, SelectField } from "../../FormFields";
 
 const departments = [
   {
@@ -40,6 +40,7 @@ const departments = [
 export default function AcademicDetailsForm(props) {
   const {
     formField: {
+      interviewDate,
       computerEngineering,
       civilEngineering,
       electricalEngineering,
@@ -51,13 +52,24 @@ export default function AcademicDetailsForm(props) {
       cgpa,
     },
   } = props;
-
+// console.log("-->", props)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Academic details
       </Typography>
       <Grid container spacing={3}>
+      <Grid item xs={12} md={6}>
+          <DatePickerField
+            name={interviewDate.name}
+            label={interviewDate.label}
+            format="dd/MM/yy"
+            // views={['year', 'month']}
+            minDate={new Date()}
+            maxDate={new Date('2050/12/31')}
+            fullWidth
+          />
+        </Grid>
         <Grid item xs={12}>
           <CheckboxField
             name={computerEngineering.name}
