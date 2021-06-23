@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useHistory} from "react-router-dom";
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -47,7 +49,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CLogin() {
+  const [hremail, setHrEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
   const classes = useStyles();
+
+  const loginCompany = async (event) => {
+    event.preventDefault();
+    console.log(hremail);
+    console.log(password);
+    // -------------------
+    const res = await fetch("/api/company/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        hremail,
+        password,
+      }),
+    });
+    const data = res.json();
+    console.log(data);
+    if (res.status === 400 || !data) {
+      window.alert("Invalid Credentials");
+    } else {
+      // dispatch({type: 'USER', payload: true})
+      window.alert("Login Successfully");
+      history.push("/");
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -70,6 +101,8 @@ export default function CLogin() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={hremail}
+            onChange={(e) => setHrEmail(e.target.value)}
           />
           <TextField
             variant="outlined"
@@ -81,6 +114,8 @@ export default function CLogin() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -92,6 +127,7 @@ export default function CLogin() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={loginCompany}
           >
             Sign In
           </Button>

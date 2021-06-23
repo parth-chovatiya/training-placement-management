@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SLogin() {
-  const [studentId, setStudentIs] = useState("");
+  const [studentId, setStudentId] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
   const classes = useStyles();
@@ -102,7 +102,7 @@ export default function SLogin() {
             autoComplete="email"
             autoFocus
             value={studentId}
-            onChange={(e) => setStudentIs(e.target.value)}
+            onChange={(e) => setStudentId(e.target.value)}
           />
           <TextField
             variant="outlined"
