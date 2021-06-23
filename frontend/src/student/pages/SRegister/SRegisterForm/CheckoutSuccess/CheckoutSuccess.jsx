@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
 function CheckoutSuccess(props) {
   return (
@@ -13,7 +14,8 @@ function CheckoutSuccess(props) {
         Your order number is #2001539. We have emailed your order confirmation,
         and will send you an update when your order has shipped.
         <br /><br />
-        Kindly Login. 
+        Kindly Login.
+        <Link to="/student/login">Login.</Link> 
       </Typography>
     </React.Fragment>
   );

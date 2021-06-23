@@ -1,8 +1,11 @@
 const express = require("express");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
+const cookieParser = require("cookie-parser");
 
 const app = express();
+
+app.use(cookieParser());
 connectDB();
 
 app.use(express.json({extended:false}));

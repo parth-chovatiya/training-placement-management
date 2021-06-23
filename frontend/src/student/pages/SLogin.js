@@ -69,14 +69,14 @@ export default function SLogin() {
         password,
       }),
     });
-    const data = res.json();
-    console.log(data);
+    const data = await res.json();
+    console.log("data-->",data);
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
     } else {
       // dispatch({type: 'USER', payload: true})
       window.alert("Login Successfully");
-      history.push("/");
+      history.push("/student/dashboard");
     }
   };
 

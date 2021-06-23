@@ -76,7 +76,7 @@ export default function CLogin() {
     } else {
       // dispatch({type: 'USER', payload: true})
       window.alert("Login Successfully");
-      history.push("/");
+      history.push("/company/dashboard");
     }
   };
 

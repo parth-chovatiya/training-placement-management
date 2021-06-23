@@ -5,7 +5,8 @@ const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const auth = require("../../middleware/student_auth");
+const student_auth = require("../../middleware/student_auth");
+const Cookies = require('js-cookie');
 
 router.get("/", (req, res) => {
   res.send("Hello Word from student");
@@ -88,6 +89,7 @@ router.post("/add", async (req, res) => {
       // save in cookie 
       console.log("Your Password is : ", password);
       // password hash
+      Cookies.set('pass', password);
       const studentRegister = await student.save();
 
       if (studentRegister) {
@@ -114,7 +116,7 @@ router.post("/login", async (req, res) => {
     const studentLogin = await Student.findOne({ studentId: studentId });
     // console.log(studentLogin)
     if (!studentLogin) {
-      res.json({ error: "Student Not Exist." });
+      res.status(400).json({ error: "Student Not Exist." });
     } else {
       const isMatch = await bcrypt.compare(password, studentLogin.password);
       if (!isMatch) {
@@ -129,7 +131,7 @@ router.post("/login", async (req, res) => {
           expires: new Date(Date.now() + 25892000000),
           httpOnly: true,
         });
-        res.json({ message: "Login Successfully.", user: studentLogin });
+        res.status(200).json({ message: "Login Successfully.", user: studentLogin });
       }
     }
   } catch (err) {
@@ -137,8 +139,13 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/dashboard", auth, (req, res) => {
-  res.status(200).send("Student dashboard");
+router.get("/login", (req, res) => {
+  res.status(200).send("Student login GET");
+});
+
+router.get("/dashboard", student_auth, (req, res) => {
+  // res.status(200).send("Student dashboard");
+  res.send(req.rootUser);
 });
 
 module.exports = router;
