@@ -1,20 +1,6 @@
-import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { InputField, CheckboxField, SelectField, DatePickerField } from '../../FormFields';
-
-
-const genders = [
-  {
-    value: 'Male',
-    label: 'Male'
-  },
-  {
-    value: 'Female',
-    label: 'Female'
-  }
-];
-// AddressForm
-// PaymentForm
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { InputField } from "../../FormFields";
 
 export default function AboutYourSelfForm(props) {
   const {
@@ -30,7 +16,7 @@ export default function AboutYourSelfForm(props) {
       state,
       zipcode,
       country,
-    }
+    },
   } = props;
   return (
     <React.Fragment>

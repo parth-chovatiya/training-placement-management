@@ -1,20 +1,17 @@
-import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
-import { InputField, CheckboxField, SelectField, DatePickerField } from '../../FormFields';
-
+import React from "react";
+import { Grid, Typography } from "@material-ui/core";
+import { InputField, SelectField, DatePickerField } from "../../FormFields";
 
 const genders = [
   {
-    value: 'Male',
-    label: 'Male'
+    value: "Male",
+    label: "Male",
   },
   {
-    value: 'Female',
-    label: 'Female'
-  }
+    value: "Female",
+    label: "Female",
+  },
 ];
-// AddressForm
-// PaymentForm
 
 export default function AboutYourSelfForm(props) {
   const {
@@ -34,7 +31,7 @@ export default function AboutYourSelfForm(props) {
       state,
       zipcode,
       country,
-    }
+    },
   } = props;
   return (
     <React.Fragment>
@@ -49,7 +46,11 @@ export default function AboutYourSelfForm(props) {
           <InputField name={studentId.name} label={studentId.label} fullWidth />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <InputField name={enrolementNo.name} label={enrolementNo.label} fullWidth />
+          <InputField
+            name={enrolementNo.name}
+            label={enrolementNo.label}
+            fullWidth
+          />
         </Grid>
         <Grid item xs={12}>
           <InputField name={aadhaarNo.name} label={aadhaarNo.label} fullWidth />
@@ -61,7 +62,6 @@ export default function AboutYourSelfForm(props) {
           <InputField name={contact.name} label={contact.label} fullWidth />
         </Grid>
         <Grid item xs={12} sm={6}>
-          {/* <InputField name={dob.name} label={dob.label} fullWidth /> */}
           <DatePickerField
             name={dob.name}
             label={dob.label}

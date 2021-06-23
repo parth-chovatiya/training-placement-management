@@ -1,7 +1,6 @@
-import React from 'react';
-import { Typography, List, ListItem, ListItemText } from '@material-ui/core';
-import useStyles from './styles';
-
+import React from "react";
+import { Typography, List, ListItem, ListItemText } from "@material-ui/core";
+import useStyles from "./styles";
 
 function ProductDetails(props) {
   const { formValues } = props;
@@ -47,7 +46,9 @@ function ProductDetails(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <ListItemText primary={"Address"} />
-        <Typography variant="body2">{formValues.address1} {formValues.address2}</Typography>
+        <Typography variant="body2">
+          {formValues.address1} {formValues.address2}
+        </Typography>
       </ListItem>
       <ListItem className={classes.listItem}>
         <ListItemText primary={"City"} />

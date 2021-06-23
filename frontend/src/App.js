@@ -6,21 +6,19 @@ import {
   Switch,
 } from "react-router-dom";
 
-import Home from './Home/pages/Home'
-import Navbar from './shared/components/Navigation/Navbar'
+import Home from "./Home/pages/Home";
+import Navbar from "./shared/components/Navigation/Navbar";
 import SLogin from "./student/pages/SLogin";
 import CLogin from "./company/pages/CLogin";
-import CRegister from "./company/pages/CRegister";
 import SDashboard from "./student/pages/SDashboard";
 import CDashboard from "./company/pages/CDashboard";
-import './App.css'
+import "./App.css";
 
-
-import SMaterialLayout from './student/pages/SRegister/Layout/MaterialLayout'
-import SSRegisterForm from './student/pages/SRegister/SRegisterForm'
+import SMaterialLayout from "./student/pages/SRegister/Layout/MaterialLayout";
+import SSRegisterForm from "./student/pages/SRegister/SRegisterForm";
 
 import CMaterialLayout from "./company/pages/CRegister/Layout/MaterialLayout";
-import CSRegisterForm from './company/pages/CRegister/CRegisterForm'
+import CSRegisterForm from "./company/pages/CRegister/CRegisterForm";
 
 function App() {
   return (

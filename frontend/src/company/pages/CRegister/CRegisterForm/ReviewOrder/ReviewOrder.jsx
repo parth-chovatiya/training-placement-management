@@ -1,12 +1,11 @@
-import React from 'react';
-import { useFormikContext } from 'formik';
-import { Typography, Grid } from '@material-ui/core';
-import ProductDetails from './ProductDetails';
-import ShippingDetails from './ShippingDetails';
+import React from "react";
+import { useFormikContext } from "formik";
+import { Typography, Grid } from "@material-ui/core";
+import ProductDetails from "./ProductDetails";
+import ShippingDetails from "./ShippingDetails";
 
 export default function ReviewOrder() {
   const { values: formValues } = useFormikContext();
-  // console.log(formValues)
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

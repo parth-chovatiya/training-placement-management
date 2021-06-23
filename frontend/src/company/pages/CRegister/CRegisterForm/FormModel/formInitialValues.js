@@ -1,4 +1,4 @@
-import checkoutFormModel from './checkoutFormModel';
+import checkoutFormModel from "./checkoutFormModel";
 const {
   formField: {
     orgname,
@@ -19,21 +19,21 @@ const {
     mechanicalEngineering,
     productionEngineering,
     informationTechnology,
-    cgpa
-  }
+    cgpa,
+  },
 } = checkoutFormModel;
 
 export default {
-  [orgname.name]: '',
-  [website.name]: '',
-  [hrname.name]: '',
-  [hremail.name]: '',
-  [hrcontact.name]: '',
-  [address1.name]: '',
-  [city.name]: '',
-  [zipcode.name]: '',
-  [country.name]: '',
-  [interviewDate.name]: '',
+  [orgname.name]: "",
+  [website.name]: "",
+  [hrname.name]: "",
+  [hremail.name]: "",
+  [hrcontact.name]: "",
+  [address1.name]: "",
+  [city.name]: "",
+  [zipcode.name]: "",
+  [country.name]: "",
+  [interviewDate.name]: "",
   [computerEngineering.name]: false,
   [civilEngineering.name]: false,
   [electricalEngineering.name]: false,
@@ -42,5 +42,5 @@ export default {
   [mechanicalEngineering.name]: false,
   [productionEngineering.name]: false,
   [informationTechnology.name]: false,
-  [cgpa.name]: ''
+  [cgpa.name]: "",
 };

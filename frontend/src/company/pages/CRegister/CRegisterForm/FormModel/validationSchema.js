@@ -1,5 +1,4 @@
 import * as Yup from "yup";
-import moment from "moment";
 import checkoutFormModel from "./checkoutFormModel";
 const {
   formField: {
@@ -25,7 +24,9 @@ export default [
     [orgname.name]: Yup.string().required(`${orgname.requiredErrorMsg}`),
     [website.name]: Yup.string().required(`${website.requiredErrorMsg}`),
     [hrname.name]: Yup.string().required(`${hrname.requiredErrorMsg}`),
-    [hremail.name]: Yup.string().email('Must be a valid email').required(`${hremail.requiredErrorMsg}`),
+    [hremail.name]: Yup.string()
+      .email("Must be a valid email")
+      .required(`${hremail.requiredErrorMsg}`),
     [hrcontact.name]: Yup.string().required(`${hrcontact.requiredErrorMsg}`),
     [address1.name]: Yup.string().required(`${address1.requiredErrorMsg}`),
     [city.name]: Yup.string().nullable().required(`${city.requiredErrorMsg}`),
@@ -42,7 +43,9 @@ export default [
       .required(`${country.requiredErrorMsg}`),
   }),
   Yup.object().shape({
-    [interviewDate.name]: Yup.string().required(`${interviewDate.requiredErrorMsg}`),
+    [interviewDate.name]: Yup.string().required(
+      `${interviewDate.requiredErrorMsg}`
+    ),
     [cgpa.name]: Yup.string().required(`${cgpa.requiredErrorMsg}`),
   }),
 ];

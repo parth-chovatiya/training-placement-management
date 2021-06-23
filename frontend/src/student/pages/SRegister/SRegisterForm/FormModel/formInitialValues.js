@@ -1,4 +1,4 @@
-import checkoutFormModel from './checkoutFormModel';
+import checkoutFormModel from "./checkoutFormModel";
 const {
   formField: {
     fullName,
@@ -17,26 +17,26 @@ const {
     coursetype,
     department,
     passingyear,
-    cgpa
-  }
+    cgpa,
+  },
 } = checkoutFormModel;
 
 export default {
-  [fullName.name]: '',
-  [studentId.name]: '',
-  [enrolementNo.name]: '',
-  [aadhaarNo.name]: '',
-  [email.name]: '',
-  [contact.name]: '',
-  [dob.name]: '',
-  [gender.name]: '',
-  [religion.name]: '',
-  [address1.name]: '',
-  [city.name]: '',
-  [zipcode.name]: '',
-  [country.name]: '',
-  [coursetype.name]: '',
-  [department.name]: '',
-  [passingyear.name]: '',
-  [cgpa.name]: ''
+  [fullName.name]: "",
+  [studentId.name]: "",
+  [enrolementNo.name]: "",
+  [aadhaarNo.name]: "",
+  [email.name]: "",
+  [contact.name]: "",
+  [dob.name]: "",
+  [gender.name]: "",
+  [religion.name]: "",
+  [address1.name]: "",
+  [city.name]: "",
+  [zipcode.name]: "",
+  [country.name]: "",
+  [coursetype.name]: "",
+  [department.name]: "",
+  [passingyear.name]: "",
+  [cgpa.name]: "",
 };

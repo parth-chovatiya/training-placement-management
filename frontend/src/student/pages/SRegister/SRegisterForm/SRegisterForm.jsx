@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import {
@@ -7,23 +7,23 @@ import {
   StepLabel,
   Button,
   Typography,
-  CircularProgress
-} from '@material-ui/core';
-import { Formik, Form } from 'formik';
-import Cookies from 'js-cookie';
+  CircularProgress,
+} from "@material-ui/core";
+import { Formik, Form } from "formik";
+import Cookies from "js-cookie";
 
-import AddressForm from './Forms/AboutYourSelfForm';
-import PaymentForm from './Forms/AcademicDetailsForm';
-import ReviewOrder from './ReviewOrder';
-import CheckoutSuccess from './CheckoutSuccess';
+import AddressForm from "./Forms/AboutYourSelfForm";
+import PaymentForm from "./Forms/AcademicDetailsForm";
+import ReviewOrder from "./ReviewOrder";
+import CheckoutSuccess from "./CheckoutSuccess";
 
-import validationSchema from './FormModel/validationSchema';
-import checkoutFormModel from './FormModel/checkoutFormModel';
-import formInitialValues from './FormModel/formInitialValues';
+import validationSchema from "./FormModel/validationSchema";
+import checkoutFormModel from "./FormModel/checkoutFormModel";
+import formInitialValues from "./FormModel/formInitialValues";
 
-import useStyles from './styles';
+import useStyles from "./styles";
 
-const steps = ['About your self', 'Academic details', 'Review your data'];
+const steps = ["About your self", "Academic details", "Review your data"];
 const { formId, formField } = checkoutFormModel;
 
 function _renderStepContent(step) {
@@ -44,12 +44,12 @@ export default function SRegisterForm() {
   const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = validationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
-  const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
   const history = useHistory();
 
   function _sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   async function _submitForm(values, actions) {
@@ -58,29 +58,28 @@ export default function SRegisterForm() {
     const res = await fetch("/api/student/add", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        values
-      })
-    })
+        values,
+      }),
+    });
     const data = await res.json();
-    if(data.status === 422 || !data){
-      window.alert("Invalid Registration")
-      console.log("Invalid Registration")
-    }
-    else{
-      window.alert("Successfull Registration")
-      console.log("Successfull Registration")
+    if (data.status === 422 || !data) {
+      window.alert("Invalid Registration");
+      console.log("Invalid Registration");
+    } else {
+      window.alert("Successfull Registration");
+      console.log("Successfull Registration");
 
       // history.push('/student/login')
     }
     // alert(JSON.stringify(values, null, 2));
 
-    const pass = Cookies.get('pass')
+    const pass = Cookies.get("pass");
     setId(values.studentId);
     setPassword(pass);
-    console.log("Pass ---> ", pass)
+    // console.log("Pass ---> ", pass)
     // Cookies.remove('pass')
     actions.setSubmitting(false);
 
@@ -107,7 +106,7 @@ export default function SRegisterForm() {
         Register
       </Typography>
       <Stepper activeStep={activeStep} className={classes.stepper}>
-        {steps.map(label => (
+        {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
           </Step>
@@ -140,7 +139,7 @@ export default function SRegisterForm() {
                       color="primary"
                       className={classes.button}
                     >
-                      {isLastStep ? 'Submit' : 'Next'}
+                      {isLastStep ? "Submit" : "Next"}
                     </Button>
                     {isSubmitting && (
                       <CircularProgress
