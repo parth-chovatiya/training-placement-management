@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Company = require("../../model/Company");
+const Student = require("../../model/Student");
 const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -136,8 +137,14 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get('/dashboard', company_auth, (req, res) => {
+router.get('/dashboard', company_auth, async (req, res) => {
   // res.status(200).send(req.company)
+  const company = req.rootUser;
+  console.log("company:--> ",company)
+  // department: {$contains: student.department}, 
+  const dt = await Student.find({department: {$in: company.branch}, cgpa : {$gte: company.cgpa}})
+  console.log(dt)
+  res.status(200).send(dt)
   res.send(req.rootUser);
 })
 
