@@ -12,15 +12,16 @@ const student_auth = async (req, res, next) => {
     return res.redirect("/api/student/login");
     // return res.status(401).json({ msg: "No token, authorization denied!" });
   }
-
+  
   try {
     //verify token
     const decoded = jwt.verify(token, config.get("jwtSecret"));
     console.log(decoded);
     //  req.user = decoded._id;
     const rootUser = await Student.findOne({ _id: decoded._id });
-
+    
     if(!rootUser){
+      // return res.redirect("/api/student/login");
       throw new Error('User Not Found.')
     }
 
@@ -30,7 +31,7 @@ const student_auth = async (req, res, next) => {
   } catch (err) {
     console.log(err)
     res.status(401).json({
-      msg: "Token is not Valid!1",
+      msg: "Token is not Valid!",
     });
   }
 };

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Student = require("../../model/Student");
+const Company = require('../../model/Company')
 const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -143,9 +144,15 @@ router.get("/login", (req, res) => {
   res.status(200).send("Student login GET");
 });
 
-router.get("/dashboard", student_auth, (req, res) => {
+router.get("/dashboard", student_auth, async (req, res) => {
   // res.status(200).send("Student dashboard");
-  res.send(req.rootUser);
+  const student = req.rootUser;
+  console.log("student:--> ",student)
+  // department: {$contains: student.department}, 
+  const dt = await Company.find({branch: {$in: [student.department]}, cgpa : {$lte: student.cgpa}})
+  console.log(dt)
+  res.status(200).send(dt)
+  // res.send(req.rootUser);
 });
 
 module.exports = router;

@@ -39,6 +39,12 @@ const SDashboard = () => {
       <p>Student Dashboard</p>
       <form action="" method="get">
         {/* {userData} */}
+        {/* {
+          function myfunc(value, index, array){
+            console.log(value)
+          }
+          userData.forEach(myfunc)
+        } */}
         {/* njnjnkn {userData._id} */}
       </form>
     </div>

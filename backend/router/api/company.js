@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const auth = require("../../middleware/company_auth");
+const company_auth = require("../../middleware/company_auth");
 
 
 
@@ -136,8 +136,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get('/dashboard', auth, (req, res) => {
-  res.status(200).send(req.company)
+router.get('/dashboard', company_auth, (req, res) => {
+  // res.status(200).send(req.company)
+  res.send(req.rootUser);
 })
 
 module.exports = router;
