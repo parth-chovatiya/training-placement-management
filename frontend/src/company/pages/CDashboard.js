@@ -33,13 +33,13 @@ const CDashboard = () => {
       const data = await res.json();
       console.log(data)
       setUserdata(data)
-      if(!res.status === 200){
+      if(!res.status === 200 || res.status === 401){
         const error = new Error(res.error)
         throw error;
       }
     }catch(err){
       console.log(err)
-      history.push('/company/login')
+      history.push('/')
     }
   }
 

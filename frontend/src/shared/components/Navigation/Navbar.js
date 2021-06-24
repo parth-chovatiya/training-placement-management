@@ -5,6 +5,8 @@ import './Navbar.css'
 
 function Navbar() {
 
+  const [loginStudent, setLoginStudent] = useState(false)
+  const [loginCompany, setLoginCompany] = useState(false)
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -44,6 +46,11 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
+              <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
+                Login
+              </Link>
+            </li>
+            {/* <li className='nav-item'>
               <Link to='/student/login' className='nav-links' onClick={closeMobileMenu}>
                 Student Login
               </Link>
@@ -52,14 +59,14 @@ function Navbar() {
               <Link to='/company/login' className='nav-links' onClick={closeMobileMenu}>
                 Company Login
               </Link>
-            </li>
-            <li className='nav-item'>
+            </li> */}
+            {/* <li className='nav-item'>
               <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                 Sign Up
               </Link>
-            </li>
+            </li> */}
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}
         </div>
       </nav>
     </>
