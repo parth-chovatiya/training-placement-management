@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import CompanyList from './CompanyList'
 
 const SDashboard = () => {
 
@@ -17,7 +18,7 @@ const SDashboard = () => {
         credentials: "include"
       });
       const data = await res.json();
-      console.log(data)
+      // console.log(data)
       setUserdata(data)
       if(!res.status === 200){
         const error = new Error(res.error)
@@ -31,7 +32,7 @@ const SDashboard = () => {
 
   useEffect(() => {
     callDashboardPage()
-    console.log(userData)
+    // console.log(userData)
   }, [])
 
   return (
@@ -46,6 +47,7 @@ const SDashboard = () => {
           userData.forEach(myfunc)
         } */}
         {/* njnjnkn {userData._id} */}
+        <CompanyList data={userData} />
       </form>
     </div>
   )
