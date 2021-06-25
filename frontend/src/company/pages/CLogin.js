@@ -79,6 +79,7 @@ export default function CLogin() {
       Cookies.set('login', 'company');
       window.alert("Login Successfully");
       history.push("/company/dashboard");
+      window.location.reload();
     }
   };
 

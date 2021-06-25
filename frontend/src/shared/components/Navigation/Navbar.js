@@ -34,7 +34,7 @@ function Navbar() {
       setLoginStudent(false)
     }
     showButton();
-  }, []);
+  }, [loginStudent, loginCompany]);
 
   window.addEventListener('resize', showButton);
 
@@ -89,7 +89,7 @@ function Navbar() {
             {/* <li className='nav-item'>
               <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
                 Sign Up
-              </Link>
+                </Link>
             </li> */}
           </ul>
           {/* {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} */}

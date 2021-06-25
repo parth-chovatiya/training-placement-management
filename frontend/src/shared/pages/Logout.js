@@ -16,6 +16,7 @@ const Logout = () => {
     }).then((res) => {
 
       history.push('/', { replace: true })
+      window.location.reload();
       if(res.status !== 200){
         const error = new Error(res.error)
         throw error

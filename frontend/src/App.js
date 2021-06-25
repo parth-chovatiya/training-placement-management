@@ -14,6 +14,7 @@ import SDashboard from "./student/pages/SDashboard";
 import CDashboard from "./company/pages/CDashboard";
 import Login from './shared/pages/Login'
 import Logout from './shared/pages/Logout'
+import Placements from "./Home/pages/Placements";
 import "./App.css";
 
 import SMaterialLayout from "./student/pages/SRegister/Layout/MaterialLayout";
@@ -29,7 +30,8 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            {/* <Home /> */}
+            <Placements />
           </Route>
           <Route path="/login">
             <Login />

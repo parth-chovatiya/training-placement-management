@@ -79,6 +79,7 @@ export default function SLogin() {
       Cookies.set('login', 'student');
       window.alert("Login Successfully");
       history.push("/student/dashboard");
+      window.location.reload();
     }
   };
 
