@@ -56,6 +56,11 @@ function Navbar() {
                 Home
               </Link>
             </li>
+            <li className='nav-item'>
+              <Link to='/placements' className='nav-links' onClick={closeMobileMenu}>
+                Placements
+              </Link>
+            </li>
             {loginStudent && (<li className='nav-item'>
               <Link to='/student/dashboard' className='nav-links' onClick={closeMobileMenu}>
                 Dashboard

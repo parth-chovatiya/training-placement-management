@@ -30,7 +30,9 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            {/* <Home /> */}
+            <Home />
+          </Route>
+          <Route path="/placements" exact>
             <Placements />
           </Route>
           <Route path="/login">
