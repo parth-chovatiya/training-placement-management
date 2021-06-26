@@ -16,7 +16,7 @@ canvas {
   width: 320px !important;
 }
 .firstRow {
-	margin-top: 50px;
+	margin-top: 70px;
 }
 .firstRow,
 .secoundRow,
@@ -24,5 +24,5 @@ canvas {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin-bottom: 50px;
+	margin-bottom: 150px;
 }
