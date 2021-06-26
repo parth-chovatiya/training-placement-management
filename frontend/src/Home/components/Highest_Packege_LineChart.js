@@ -40,13 +40,23 @@ const Highest_Packege_LineChart = () => {
       },
     ],
   }
+  const optionsBar = {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Highest Package',
+        // fontSize: "50px"
+      },
+    },
 
+  };
   return (
     <div>
        <Line
         data={dataLine}
-        width="6000"
-        height="900"
+        // width="6000"
+        // height="900"
+        options={optionsBar}
       />
     </div>
   )

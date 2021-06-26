@@ -41,6 +41,8 @@ const Branchwise_placement_BarChart = () => {
     ],
   }
   const optionsBar = {
+    responsive: true,
+    maintainAspectRatio: true,
     scales: {
       yAxes: [
         {
@@ -50,24 +52,27 @@ const Branchwise_placement_BarChart = () => {
         },
       ],
     },
-     title:{
-        display:true,
-        text:'Largest Cities In India',
-        fontSize:25
+    plugins: {
+      title: {
+        display: true,
+        text: 'Branchwise Placement',
+        // fontSize: "50px"
       },
-      legend:{
-        display:true,
-        position:'right'
-      }
+    },
+
+    legend: {
+      display: true,
+      position: 'right'
+    }
   };
 
   return (
     <div className="chart">
       <Bar
         data={dataBar}
-        width="200px"
-        height="50px"
-        options={{ optionsBar }}
+        // width="200px"
+        // height="50px"
+        options={ optionsBar }
       />
     </div>
   );

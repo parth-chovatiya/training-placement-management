@@ -7,9 +7,9 @@ const Placement_BarChart = () => {
   const dataBar = {
     labels: [
       "2013-14",
-      "2014-15", 
+      "2014-15",
       "2015-16",
-      "2016-17", 
+      "2016-17",
       "2017-18",
       "2018-19",
       "2019-20",
@@ -41,6 +41,8 @@ const Placement_BarChart = () => {
     ],
   }
   const optionsBar = {
+    responsive: true,
+    maintainAspectRatio: false,
     scales: {
       yAxes: [
         {
@@ -50,24 +52,27 @@ const Placement_BarChart = () => {
         },
       ],
     },
-     title:{
-        display:true,
-        text:'Largest Cities In India',
-        fontSize:25
+    
+    plugins: {
+      title: {
+        display: true,
+        text: 'Placement BarChart',
+        // fontSize: "50px"
       },
-      legend:{
-        display:true,
-        position:'right'
-      }
+    },
+    legend: {
+      display: true,
+      position: 'right'
+    }
   };
 
   return (
     <div>
       <Bar
         data={dataBar}
-        width="200px"
-        height="50px"
-        options={{ optionsBar }}
+        // width="200px"
+        // height="50px"
+        options={ optionsBar }
       />
     </div>
   )

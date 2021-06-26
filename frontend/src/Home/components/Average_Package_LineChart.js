@@ -40,13 +40,22 @@ const Average_Package_LineChart = () => {
       },
     ],
   }
-
+  const optionsBar = {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Average Placement',
+        // fontSize: "50px"
+      },
+    },
+  };
   return (
     <div>
       <Line
         data={dataLine}
-        width="200px"
-        height="50px"
+        // width="200px"
+        // height="50px"
+        options={optionsBar}
       />
     </div>
   )

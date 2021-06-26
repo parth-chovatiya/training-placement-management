@@ -50,11 +50,13 @@ const Companies_Visited_BarChart = () => {
         },
       ],
     },
-     title:{
-        display:true,
-        text:'Largest Cities In India',
-        fontSize:25
+    plugins: {
+      title: {
+        display: true,
+        text: 'Companies BarChart',
+        // fontSize: "50px"
       },
+    },
       legend:{
         display:true,
         position:'right'
@@ -66,9 +68,9 @@ const Companies_Visited_BarChart = () => {
     <div>
       <Bar
         data={dataBar}
-        width="200px"
-        height="50px"
-        options={{ optionsBar }}
+        // width="200px"
+        // height="50px"
+        options={ optionsBar }
       />
     </div>
   )

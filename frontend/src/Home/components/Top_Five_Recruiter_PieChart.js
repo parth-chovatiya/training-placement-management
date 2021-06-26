@@ -25,11 +25,21 @@ const data = {
     },
   ],
 };
-
+const options = {
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: {
+    title: {
+      display: true,
+      text: 'Top Recruitment Company',
+      // fontSize: "50px"
+    },
+  },
+};
 const Top_Five_Recruiter_PieChart = () => {
   return (
     <div>
-      <Pie data={data} />
+      <Pie data={data} options={options}/>
     </div>
   )
 }
