@@ -126,9 +126,9 @@ function Row(props) {
                 <TableHead>
                   <TableRow>
                     <TableCell>No</TableCell>
-                    <TableCell>Customer</TableCell>
-                    <TableCell align="right">Amount</TableCell>
-                    <TableCell align="right">Total price ($)</TableCell>
+                    <TableCell>Name of Industries</TableCell>
+                    <TableCell align="right">Package (L/A)</TableCell>
+                    <TableCell align="right">Total Placed</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
