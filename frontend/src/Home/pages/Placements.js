@@ -1,34 +1,40 @@
 import React from "react";
-import Branchwise_placement_BarChart from "../components/Branchwise_placement_BarChart";
-import Top_Five_Recruiter_PieChart from "../components/Top_Five_Recruiter_PieChart";
-import Placement_BarChart from "../components/Placement_BarChart";
-import Companies_Visited_BarChart from "../components/Companies_Visited_BarChart";
-import Highest_Packege_LineChart from "../components/Highest_Packege_LineChart";
-import Average_Package_LineChart from "../components/Average_Package_LineChart";
 import { Container } from "@material-ui/core";
+import PlacementNav from "../components/PlacementNav";
+import TrainingPlaccement from "./TrainingPlacement";
+import PlacementRecords from "./PlacementRecords";
+import "./Placement.css";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 
 const Placements = () => {
-
   return (
-    <Container>
-      <div className="chart">
-        <div className="firstRow">
-          <Branchwise_placement_BarChart />
-          <div className="Top_Five_Recruiter_PieChart">
-            <Top_Five_Recruiter_PieChart />
+    <>
+      <Route>
+        <div className="row">
+          <div className="col-1">
+            <PlacementNav />
+          </div>
+          <div className="col-2">
+            <Container maxWidth="xl">
+              <Switch>
+                <Route path="/placements" exact>
+                  <TrainingPlaccement />
+                </Route>
+                <Route path="/placements/placements_records">
+                  <PlacementRecords />
+                </Route>
+              </Switch>
+            </Container>
           </div>
         </div>
-
-        <div className="secoundRow">
-          <Placement_BarChart />
-          <Companies_Visited_BarChart />
-        </div>
-        <div className="thirdRow">
-          <Highest_Packege_LineChart />
-          <Average_Package_LineChart />
-        </div>
-      </div>
-    </Container>
+      </Route>
+    </>
   );
 };
 

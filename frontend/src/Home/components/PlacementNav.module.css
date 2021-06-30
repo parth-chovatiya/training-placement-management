@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+.sidebar-nav {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.list-group {
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 60px;
+}
+
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 40px;
+  margin-bottom: -1px;
+  margin-left: -32px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
