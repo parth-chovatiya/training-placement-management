@@ -16,9 +16,14 @@
 .list-group-item {
   position: relative;
   display: block;
-  padding: 10px 40px;
+  padding: 10px 50px;
   margin-bottom: -1px;
   margin-left: -32px;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item a{
+  color: black;
+  text-decoration: none;
 }
