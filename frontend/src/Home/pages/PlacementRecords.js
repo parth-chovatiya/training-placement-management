@@ -510,7 +510,7 @@ const rows = [
 export default function PlacementRecords() {
   return (
     <>
-      <h2>Placement Record</h2>
+      <h1>Placement Record</h1>
       <hr />
       <br />
       <TableContainer component={Paper}>

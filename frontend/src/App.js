@@ -38,6 +38,12 @@ function App() {
           <Route path="/placements/placements_records" exact>
             <Placements />
           </Route>
+          <Route path="/placements/recruiters" exact>
+            <Placements />
+          </Route>
+          <Route path="/placements/recuiter_speak" exact>
+            <Placements />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>

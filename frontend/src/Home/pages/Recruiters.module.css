@@ -1,0 +1,17 @@
+.image-container{
+  /* border: 2px solid black; */
+  height: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.image-container .row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.image-container .row img{
+  width: 200px;
+  height: auto;
+}

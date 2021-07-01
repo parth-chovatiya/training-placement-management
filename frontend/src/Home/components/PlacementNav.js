@@ -13,10 +13,10 @@ const PlacementNav = () => {
           <Link to="/placements/placements_records">Placement Record</Link>
         </li>
         <li className={`${classes['list-group-item']}`}>
-          <Link to="#">Associated Recruiters</Link>
+          <Link to="/placements/recruiters">Associated Recruiters</Link>
         </li>
         <li className={`${classes['list-group-item']}`}>
-          <Link to="#">Recruiters Speak</Link>
+          <Link to="/placements/recuiter_speak">Recruiters Speak</Link>
         </li>
         <li className={`${classes['list-group-item']}`}>
           <Link to="#">Placement Gallery</Link>
