@@ -6,6 +6,8 @@ import UDAAN18 from "../image/UDAAN18.jpg"
 import bvm_reunion2017 from "../image/bvm_reunion2017.jpg"
 import bvm from '../image/bvm.jpg'
 
+import './Carousel.css'
+
 export default function Example(props)
 {
     var items = [
@@ -36,9 +38,8 @@ function Item(props)
 {
     return (
         <Paper>
-            <p>{props.item.img}</p>
-            <h2>{props.item.name}</h2>
-            {/* <p>{props.item.description}</p> */}
+            <div className="img">{props.item.img}</div>
+            <h2 className="name">{props.item.name}</h2>
         </Paper>
     )
 }
