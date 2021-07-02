@@ -1,0 +1,25 @@
+.col{
+  display: flex;
+  flex-direction: row;
+  margin: 70px 15px;
+  width: 100%;
+}
+.logo img{
+  display: block;
+  margin: auto;
+}
+.logo{
+  width: 30%;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border: 1px solid black;
+}
+.info h2{
+  text-decoration: underline;
+  text-decoration-color: black;
+}
