@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Footer.css";
+import classes from "./Footer.module.css";
 
 const Footer = () => {
   const items = [];
   for (var i = 0; i < 128; i++) {
     items.push(
       <div
-        className="bubble"
+        className={classes.bubble}
         style={{
           "--size": `${2 + Math.random() * 4}rem`,
           distance: `${6 + Math.random() * 4}rem`,
@@ -22,11 +22,11 @@ const Footer = () => {
 
   return (
     <>
-      <div className="footer">
-        <div className="bubbles">{items}</div>
-        <div className="content">
-          <div className="col">
-            <div className="row row-1">
+      <div className={classes.footer}>
+        <div className={classes.bubbles}>{items}</div>
+        <div className={classes.content}>
+          <div className={classes.col}>
+            <div className={`${classes.row} ${classes['row-1']}`}>
               <b>ASSOCIATIONS</b>
               <Link to="/">Home</Link>
               <Link to="/placements">Placement</Link>
@@ -34,7 +34,7 @@ const Footer = () => {
               <Link to="/company/login">Login as Company</Link>
               <Link to="/aboutus">About Us</Link>
             </div>
-            <div className="row row-2">
+            <div className={`${classes.row} ${classes['row-2']}`}>
               <b>Contact Us</b>
               <p>Birla Vishvakarma Mahavidyalaya Engineering college</p>
               <p>Post Box No. 20, </p>
@@ -43,7 +43,7 @@ const Footer = () => {
               <p>Telephone: +91-2692-230104</p>
               <p>Email Id : principal@bvmengineering.ac.in</p>
             </div>
-            <div className="row row-3">
+            <div className={`${classes.row} ${classes['row-3']}`}>
               <b>Virtual Tour</b>
               <div>
                 <iframe

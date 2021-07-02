@@ -1,0 +1,13 @@
+.content{
+  margin: 35px 15px;
+}
+.content h2{
+  text-decoration: underline;
+  text-decoration-color: black;
+  padding-bottom: 25px;
+}
+.col{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
