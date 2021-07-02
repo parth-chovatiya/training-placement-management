@@ -1,7 +1,7 @@
 .col{
   display: flex;
   flex-direction: row;
-  margin: 70px 15px;
+  margin: 80px 15px;
   width: 100%;
 }
 .logo img{
@@ -14,12 +14,21 @@
 .info{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 70%;
-  border: 1px solid black;
+  margin-right: 120px;
+}
+.info .clgname{
+  font-size: 20px;
 }
 .info h2{
   text-decoration: underline;
   text-decoration-color: black;
+  margin-bottom: 15px;
+  font-size: 34px;
+  word-spacing: 4px;
+}
+.info p{
+  line-height: 25px;
 }

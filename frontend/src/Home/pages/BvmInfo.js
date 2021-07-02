@@ -12,9 +12,9 @@ const BvmInfo = () => {
       </div>
       <div className="row info">
         <h2>TRAINING AND PLACEMENT CELL</h2>
-        <p>Engineering College, Vallabh Vidyanagar</p>
+        <p className="clgname">Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar</p>
         <p>[An Autonomous Institution]</p>
-        <p>Managed by Charutar Vidyamandal</p>
+        <p>Managed by Charutar Vidyamandal</p>       
       </div>
     </div>
   )
