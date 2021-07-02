@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 export default function Login() {
   return (
     // <Container maxWidth="sm">
-    <div style={{display: 'Flex', flexDirection: 'column', justifyContent: 'center', alignItem: 'Center', width: '100%', height: '88vh'}}>
+    <div style={{display: 'Flex', flexDirection: 'column', justifyContent: 'center', alignItem: 'Center', width: '100%', height: '50vh'}}>
       <Box style={{textAlign:"center"}}>
         <Button variant="contained" style={{padding: "10px 25px"}} color="primary">
           <Link

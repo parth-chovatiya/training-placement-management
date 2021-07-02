@@ -23,6 +23,8 @@ import SSRegisterForm from "./student/pages/SRegister/SRegisterForm";
 import CMaterialLayout from "./company/pages/CRegister/Layout/MaterialLayout";
 import CSRegisterForm from "./company/pages/CRegister/CRegisterForm";
 
+import Footer from './shared/components/Footer/Footer'
+
 function App() {
   return (
     <Router>
@@ -75,6 +77,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
 }
