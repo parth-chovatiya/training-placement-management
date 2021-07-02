@@ -2,17 +2,17 @@ import React from 'react'
 
 import bvm_logo from '../image/bvm_logo.png'
 
-import './BvmInfo.css'
+import classes from './BvmInfo.module.css'
 
 const BvmInfo = () => {
   return (
-    <div className="col">
-      <div className="row logo">
+    <div className={classes.col}>
+      <div className={`${classes.row} ${classes.logo}`}>
         <img src={bvm_logo} alt="BVM Logo" width="200px" />
       </div>
-      <div className="row info">
+      <div className={`${classes.row} ${classes.info}`}>
         <h2>TRAINING AND PLACEMENT CELL</h2>
-        <p className="clgname">Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar</p>
+        <p className={classes.clgname}>Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar</p>
         <p>[An Autonomous Institution]</p>
         <p>Managed by Charutar Vidyamandal</p>       
       </div>
