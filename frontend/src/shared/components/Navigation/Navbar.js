@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from './Button';
-import './Navbar.css'
 import Cookie from 'js-cookie'
+
+import bvm_logo from '../../../Home/image/bvm_logo.png'
+import './Navbar.css'
 
 function Navbar() {
 
@@ -44,7 +46,7 @@ function Navbar() {
         <div className="navbar-container">
 
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            TRVL <i className="fab fa-typo3" />
+            <img src={bvm_logo} width="65" /> &nbsp; BVM
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

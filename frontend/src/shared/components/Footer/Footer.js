@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <>
       <div className={classes.footer}>
-        <div className={classes.bubbles}>{items}</div>
+        {/* <div className={classes.bubbles}>{items}</div> */}
         <div className={classes.content}>
           <div className={classes.col}>
             <div className={`${classes.row} ${classes['row-1']}`}>
