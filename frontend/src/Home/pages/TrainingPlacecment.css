@@ -6,8 +6,9 @@
 .details {
   text-align: justify;
   margin: 20px 35px;
-  line-height: 22px;
-  word-spacing: 2px;
+  line-height: 24px;
+  word-spacing: 6px;
+  font-size: 17px;
 }
 canvas {
 	width: 500px !important;
