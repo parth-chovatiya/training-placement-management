@@ -56,7 +56,7 @@ const Branchwise_placement_BarChart = () => {
       title: {
         display: true,
         text: 'Branchwise Placement',
-        // fontSize: "50px"
+        font: {weight: 'bold', size:"20px"},
       },
     },
 

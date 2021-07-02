@@ -14,6 +14,7 @@ canvas {
 }
 .Top_Five_Recruiter_PieChart canvas{
   width: 320px !important;
+	margin-left: 0px;
 }
 .firstRow {
 	/* margin-top: 70px; */
@@ -22,7 +23,8 @@ canvas {
 .secoundRow,
 .thirdRow{
 	display: flex;
-	justify-content: space-around;
+	/* justify-content: space-around; */
+	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 150px;
+	margin-bottom: 130px;
 }

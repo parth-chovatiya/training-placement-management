@@ -45,7 +45,7 @@ const Average_Package_LineChart = () => {
       title: {
         display: true,
         text: 'Average Placement',
-        // fontSize: "50px"
+        font: {weight: 'bold', size:"20px"}
       },
     },
   };

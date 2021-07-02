@@ -45,7 +45,7 @@ const Highest_Packege_LineChart = () => {
       title: {
         display: true,
         text: 'Highest Package',
-        // fontSize: "50px"
+        font: {weight: 'bold', size:"20px"}
       },
     },
 

@@ -56,8 +56,8 @@ const Placement_BarChart = () => {
     plugins: {
       title: {
         display: true,
-        text: 'Placement BarChart',
-        // fontSize: "50px"
+        text: 'Placement (Year on Year)',
+        font: {weight: 'bold', size:"20px"}
       },
     },
     legend: {

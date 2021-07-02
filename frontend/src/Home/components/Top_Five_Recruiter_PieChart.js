@@ -33,7 +33,7 @@ const options = {
     title: {
       display: true,
       text: 'Top Recruitment Company',
-      // fontSize: "50px"
+      font: {weight: 'bold', size:"20px"}
     },
   },
 };

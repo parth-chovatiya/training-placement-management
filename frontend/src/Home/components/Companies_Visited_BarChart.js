@@ -53,8 +53,8 @@ const Companies_Visited_BarChart = () => {
     plugins: {
       title: {
         display: true,
-        text: 'Companies BarChart',
-        // fontSize: "50px"
+        text: 'Companies Visited (Year on Year)',
+        font: {weight: 'bold', size:"20px"}
       },
     },
       legend:{
