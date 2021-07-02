@@ -30,8 +30,11 @@ body .footer .bubbles .bubble {
   left: var(--position, 50%);
   background: var(--footer-background);
   border-radius: 100%;
-  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-          animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  -webkit-animation: bubble-size var(--time, 4s) ease-in infinite
+      var(--delay, 0s),
+    bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+    bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
   transform: translate(-50%, 100%);
 }
 body .footer .content {
@@ -54,28 +57,10 @@ body .footer .content p {
   margin: 0;
   font-size: 0.75rem;
 }
-body .footer .content > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-body .footer .content > div > div {
-  margin: 0.25rem 0;
-}
-body .footer .content > div > div > * {
-  margin-right: 0.5rem;
-}
-body .footer .content > div .image {
-  align-self: center;
-  width: 4rem;
-  height: 4rem;
-  margin: 0.25rem 0;
-  background-size: cover;
-  background-position: center;
-}
 
 @-webkit-keyframes bubble-size {
-  0%, 75% {
+  0%,
+  75% {
     width: var(--size, 4rem);
     height: var(--size, 4rem);
   }
@@ -86,7 +71,8 @@ body .footer .content > div .image {
 }
 
 @keyframes bubble-size {
-  0%, 75% {
+  0%,
+  75% {
     width: var(--size, 4rem);
     height: var(--size, 4rem);
   }
@@ -110,4 +96,28 @@ body .footer .content > div .image {
   100% {
     bottom: var(--distance, 10rem);
   }
+}
+
+.col {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100%;
+  justify-content: space-around;
+}
+.row {
+  display: flex;
+  flex-direction: column;
+}
+.row b {
+  margin: 20px 0;
+  text-decoration: underline;
+  text-decoration-color: whitesmoke;
+}
+.col a {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.row-2 p {
+  font-size: 15px !important;
+  line-height: 24px;
 }

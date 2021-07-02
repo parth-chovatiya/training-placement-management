@@ -1,24 +1,18 @@
-.col{
+.col {
   display: flex;
   flex-direction: row;
   width: 100%;
   margin-top: 50px;
 }
 
-.row-1{
+.row-1 {
   display: flex;
   flex-direction: column;
-  width: 50%; 
-  /* border: 1px solid red; */
+  width: 50%;
   margin: 0 15px;
-  box-shadow: 0 0 3px rgba(128, 128, 128, 0.6), 0 0 5px rgba(128, 128, 128, 0.6);
+  box-shadow: 0 0 3px rgba(64, 58, 58, 0.6), 0 0 5px rgba(128, 128, 128, 0.6);
 }
-.row-1:hover{
-  /* border: 1px dotted black; */
-}
-
-.row-2{
-  /* border: 1px solid red; */
+.row-2 {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 3px rgba(128, 128, 128, 0.6), 0 0 5px rgba(128, 128, 128, 0.6);
@@ -29,12 +23,14 @@
   text-align: justify;
 }
 
-.collegename, .principalmsg{
+.collegename,
+.principalmsg {
   margin: 20px auto;
-  text-decoration: underline;     
-  text-decoration-color: black;  
+  text-decoration: underline;
+  text-decoration-color: black;
 }
-.visionmission, .msg{
+.visionmission,
+.msg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,12 +38,14 @@
   line-height: 22px;
   word-spacing: 2px;
 }
-.mission h2, .vision h2{
-  text-decoration: underline;     
-  text-decoration-color: black;  
+.mission h2,
+.vision h2 {
+  text-decoration: underline;
+  text-decoration-color: black;
   margin-bottom: 10px;
 }
-.mission, .vision{
+.mission,
+.vision {
   text-align: justify;
   margin-bottom: 40px;
 }

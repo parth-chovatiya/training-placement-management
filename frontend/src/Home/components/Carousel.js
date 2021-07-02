@@ -6,7 +6,7 @@ import UDAAN18 from "../image/UDAAN18.jpg"
 import bvm_reunion2017 from "../image/bvm_reunion2017.jpg"
 import bvm from '../image/bvm.jpg'
 
-import './Carousel.css'
+import classes from './Carousel.module.css'
 
 export default function Example(props)
 {
@@ -38,8 +38,8 @@ function Item(props)
 {
     return (
         <Paper>
-            <div className="img">{props.item.img}</div>
-            <h2 className="name">{props.item.name}</h2>
+            <div className={classes.img}>{props.item.img}</div>
+            <h2 className={classes.name}>{props.item.name}</h2>
         </Paper>
     )
 }
