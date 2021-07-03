@@ -1,0 +1,32 @@
+.eligibility {
+  margin: 60px 0;
+  text-align: justify;
+}
+.title {
+  margin: 40px 0;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+.point {
+  padding: 15px 0;
+  list-style: decimal;
+  line-height: 25px;
+  margin-left: 10px;
+}
+.mainul {
+  list-style-position: outside;
+}
+.heading {
+  margin: 50px 0 10px 0;
+  color: blue;
+}
+.red {
+  color: red;
+}
+.point > ul {
+  list-style: lower-alpha;
+  padding-top: 5px;
+}
+.point > ul > li {
+  line-height: 25px;
+}
