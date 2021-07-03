@@ -132,7 +132,6 @@ router.post("/login", async (req, res) => {
           expires: new Date(Date.now() + 25892000000),
           httpOnly: true,
         });
-        Cookies.set("login", "student");
         res
           .status(200)
           .json({ message: "Login Successfully.", user: studentLogin });

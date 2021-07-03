@@ -114,8 +114,9 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ error: "Please Fill all fields." });
     }
     const companyLogin = await Company.findOne({ hremail: hremail });
+    console.log("company login ----> ", companyLogin)
     if (!companyLogin) {
-      res.json({ error: "Company Not Exist." });
+      res.status(400).json({ error: "Company Not Exist." });
     } else {
       const isMatch = await bcrypt.compare(password, companyLogin.password);
       if (!isMatch) {
