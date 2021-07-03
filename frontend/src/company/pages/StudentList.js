@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import moment from 'moment'
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -84,7 +85,7 @@ function createData(
     email,
     contact,
     gender,
-    dob,
+    dob: moment(dob).utc().format('MM/DD/YYYY'),
     religion,
     address,
     aadhaarNo,

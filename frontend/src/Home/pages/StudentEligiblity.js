@@ -1,44 +1,44 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import "./StudentEligiblity.css";
+import classes from "./StudentEligiblity.module.css";
 
 const StudentEligiblity = () => {
   return (
     <>
-      <Container maxWidth="md">
-        <div className="eligibility">
-          <h1 className="title">Placement Rules and Regulations</h1>
-          <div className="desc">
-            <ul className="mainul">
-              <h2 className="heading">A. ELIGIBILITY & REGISTRATION</h2>
-              <li className="point">
+      <Container maxWidth="lg">
+        <div className={classes.eligibility}>
+          <h1 className={classes.title}>Placement Rules and Regulations</h1>
+          <div className={classes.desc}>
+            <ul className={classes.mainul}>
+              <h2 className={classes.heading}>A. ELIGIBILITY & REGISTRATION</h2>
+              <li className={classes.point}>
                 All students who expect to graduate from the Institute by the
                 end of the academic year 2020-2021 and are seeking employment
                 may register for campus placements with this office. Placement
                 Registration is for ONE ACADEMIC YEAR ONLY.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Registration for all programmes will be done during the month of
                 August.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 MS & PhD scholars’ placement will happen round the year. Their
                 registration will be valid for one year only. They can register
                 by attaching a certificate (NOC) & Abstract in the prescribed
                 format available in the Placement website.
               </li>
-              <p className="red">
+              <p className={classes.red}>
                 Inter-disciplinary (ID) students will be permitted to upload
                 resumes for both the departments as approved at the time of
                 admission to the program. The NoC for ID students must be signed
                 by the guide from both the departments.
               </p>
-              <li className="point">
+              <li className={classes.point}>
                 Campus placement is a facility provided for the students.
                 Registration is not compulsory. Students not interested in
                 placement are advised not to register for placement.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Backlogs: Students having backlog of 4 or more courses are not
                 permitted to register for placement. Such students are advised
                 to clear the backlogs and then register after the July-November
@@ -46,7 +46,7 @@ const StudentEligiblity = () => {
                 register in case of non-completion of course/project
                 requirements in their last two semesters.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 RE-REGISTRATION: Students who have lost the job for genuine
                 reasons will be allowed to re-register on a case to case basis.
               </li>
@@ -57,7 +57,7 @@ const StudentEligiblity = () => {
                 permitted to appear for placement only from Day 3 or later, as
                 approved by the Board of Placements.
               </p>
-              <li className="point">
+              <li className={classes.point}>
                 Each registered student will be given a Placement Registration
                 (PR) Number to access the placement notices, company
                 announcements and to upload resumes.
@@ -67,51 +67,51 @@ const StudentEligiblity = () => {
                 circumstance.
               </b>
 
-              <h2 className="heading">B. RESUME</h2>
-              <li className="point">
+              <h2 className={classes.heading}>B. RESUME</h2>
+              <li className={classes.point}>
                 Students are advised to read the announcements made, go through
                 the company website and apply only if interested.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Students are expected to follow the institute resume template
                 available in the placement website for preparing the resumes.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 The details given in the resume have to be genuine and any
                 student found violating this rule will be disallowed from the
                 placement for the rest of the academic year.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Students have to upload and submit their resumes on the website
                 to individual companies well before the deadline. Resume once
                 submitted cannot be modified.{" "}
                 <b>DEADLINES WILL NOT BE EXTENDED UNDER ANY CIRCUMSTANCE.</b>
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Students are advised to avoid last minute uploading, as it may
                 lead to delays and some may even be left out.
               </li>
 
-              <h2 className="heading">C. PRE-PLACEMENT TALKS (PPT)</h2>
-              <li className="point">
+              <h2 className={classes.heading}>C. PRE-PLACEMENT TALKS (PPT)</h2>
+              <li className={classes.point}>
                 Notices of the PPT will be published in the placement website
                 well in advance. Students should be seated in the venue 15
                 minutes before the scheduled start of the PPT.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Students interested in a particular company, can attend its PPT.
                 Attendance for PPT is not compulsory.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Students must go through the complete selection process of a
                 particular company, once their resumes are uploaded.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Any clarification regarding salary break-up, job profile, place
                 of work, bond details etc. must be sought from the companies
                 during PPT or interview.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 DRESS CODE: Students must be formally dressed whenever they
                 participate in any interaction with a company
               </li>
@@ -128,14 +128,14 @@ const StudentEligiblity = () => {
               <span>* Shirt not-tucked in</span>
               <span>* Chappals / flip-flops</span>
 
-              <h2 className="heading">D. PLACEMENT PROCESS</h2>
-              <li className="point">
+              <h2 className={classes.heading}>D. PLACEMENT PROCESS</h2>
+              <li className={classes.point}>
                 It is the responsibility of the student to check announcements /
                 notices / updated information / shortlisted names etc. in the
                 notice boards of Placement Website. Students are expected to be
                 punctual.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 ATTENDANCE & PUNCTUALITY:
                 <ul>
                   <li>
@@ -151,7 +151,7 @@ const StudentEligiblity = () => {
                   </li>
                 </ul>
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 DISCIPLINE:
                 <ul>
                   <li>
@@ -171,8 +171,8 @@ const StudentEligiblity = () => {
                 </ul>
               </li>
 
-              <h2 className="heading">E. JOB OFFERS</h2>
-              <li className="point">
+              <h2 className={classes.heading}>E. JOB OFFERS</h2>
+              <li className={classes.point}>
                 PRE PLACEMENT OFFERS:
                 <p>
                   The Placement Office has de-linked Pre-Placement Offers (PPO)
@@ -202,7 +202,7 @@ const StudentEligiblity = () => {
                   </li>
                 </ul>
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 MULTIPLE OFFERS: Each student is eligible for only one job
                 offer.
                 <ul>
@@ -220,26 +220,26 @@ const StudentEligiblity = () => {
                   </li>
                 </ul>
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Every student who is selected by a company is out of placement
                 thereafter i.e. deregistered from the placement website.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 RELEASE OF OFFER: All companies are requested to release the
                 Offer and hand over to this office within an hour after the
                 completion of the recruitment process.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 Offer Acceptance: The students should inform the
                 acceptance/rejection of offer within 24 hours (on the day
                 following the release of offer).
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 WAITLIST: In case of those students who are placed and
                 waitlisted by other companies, they will be given 2 days to
                 accept the offer on hand.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 OFFER OF JOB: Announcement on the website will be considered as
                 firm offer. Offers received from companies must be collected as
                 per timings in circular / notice. The responsibility of going
@@ -251,8 +251,8 @@ const StudentEligiblity = () => {
                 the student by the company.
               </li>
 
-              <h2 className="heading">F. MISCELLANEOUS</h2>
-              <li className="point">
+              <h2 className={classes.heading}>F. MISCELLANEOUS</h2>
+              <li className={classes.point}>
                 MEDICAL TEST: The Placement office assumes that every selected
                 student will pass the medical test. If there is a rejection at
                 this stage, the student registration will be renewed and the
@@ -261,17 +261,17 @@ const StudentEligiblity = () => {
                 related to medical test carefully. The same should also be
                 adequately clarified during PPT/interview.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 JOINING STATUS: In case of students who go for higher studies
                 and hence decide not to join the company, should inform the
                 company in writing at the earliest with a copy to Placement
                 Office.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 IDENTITY CARDS: Students must bring their identity cards with
                 them whenever they go through a placement process.
               </li>
-              <li className="point">
+              <li className={classes.point}>
                 For all matters not covered by the above regulations, the
                 Placement Office will use its discretion to take appropriate
                 decisions. The decision taken by this office shall be binding on

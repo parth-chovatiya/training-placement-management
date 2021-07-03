@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import moment from 'moment'
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -90,7 +91,7 @@ export default function StickyHeadTable(props) {
       hrname,
       hremail,
       hrcontact,
-      interviewDate,
+      interviewDate: moment(interviewDate).utc().format('MM/DD/YYYY'),
     };
   }
   console.log(props.data);
