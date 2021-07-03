@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import FacebookIcon from '@material-ui/icons/Facebook';
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import TwitterIcon from "@material-ui/icons/Twitter";
 import classes from "./Footer.module.css";
 
 const Footer = () => {
@@ -27,10 +31,9 @@ const Footer = () => {
         <div className={classes.bubbles}>{items}</div>
         <div className={classes.content}>
           <div className={classes.col}>
-
-            <div className={`${classes.row} ${classes['row-1']}`}>
+            <div className={`${classes.row} ${classes["row-1"]}`}>
               <div className={classes.info}>
-                <div className={`${classes['row-1-1']}`}>
+                <div className={`${classes["row-1-1"]}`}>
                   <b className={classes.title}>ASSOCIATIONS</b>
                   <Link to="/">Home</Link>
                   <Link to="/placements">Placement</Link>
@@ -39,7 +42,7 @@ const Footer = () => {
                   <Link to="/aboutus">About Us</Link>
                 </div>
 
-                <div className={`${classes['row-1-2']}`}>
+                <div className={`${classes["row-1-2"]}`}>
                   <b className={classes.title}>Contact Us</b>
                   <p>Birla Vishvakarma Mahavidyalaya Engineering college</p>
                   <p>Post Box No. 20, </p>
@@ -50,17 +53,15 @@ const Footer = () => {
                 </div>
               </div>
               <div className={classes.social}>
-                {/* <a>Facebook</a> */}
-                <FacebookIcon style={{color: 'white', fontSize: "40"}} />
-                <a>Facebook</a>
-                <a>Facebook</a>
-                <a>Facebook</a>
-                <a>Facebook</a>
-                <a>Facebook</a>
+                <FacebookIcon style={{ color: "white", fontSize: "40" }} />
+                <InstagramIcon style={{ color: "white", fontSize: "40" }} />
+                <LinkedInIcon style={{ color: "white", fontSize: "40" }} />
+                <YouTubeIcon style={{ color: "white", fontSize: "40" }} />
+                <TwitterIcon style={{ color: "white", fontSize: "40" }} />
               </div>
             </div>
 
-            <div className={`${classes.row} ${classes['row-2']}`}>
+            <div className={`${classes.row} ${classes["row-2"]}`}>
               <b className={classes.title}>Virtual Tour</b>
               <div>
                 <iframe
@@ -73,7 +74,6 @@ const Footer = () => {
                 ></iframe>
               </div>
             </div>
-
           </div>
         </div>
       </div>
