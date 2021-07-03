@@ -57,11 +57,7 @@ function Navbar() {
                 Home
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link to='/placements' className='nav-links' onClick={closeMobileMenu}>
-                Placements
-              </Link>
-            </li>
+            
             {loginStudent && (<li className='nav-item'>
               <Link to='/student/dashboard' className='nav-links' onClick={closeMobileMenu}>
                 Dashboard
@@ -72,11 +68,34 @@ function Navbar() {
                 Dashboard
               </Link>
             </li>)}
-            {(!loginStudent && !loginCompany) && (<li className='nav-item'>
-              <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
-                Login
+            <li className='nav-item'>
+              <Link to='/placements' className='nav-links' onClick={closeMobileMenu}>
+                Placements
               </Link>
-            </li>)}
+            </li>
+            <li className='nav-item'>
+              <div className="dropdown">
+                <button className="dropbtn nav-links">For Student &nbsp; <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                  {(!loginStudent && !loginCompany) && (<Link to="/student/login">Login</Link>)}
+                  {(!loginStudent && !loginCompany) && (<Link to="/student/register">Register</Link>)}
+                  <Link to="#">Link 3</Link>
+                </div>
+              </div> 
+            </li>
+            <li className='nav-item'>
+              <div className="dropdown">
+                <button className="dropbtn nav-links">For Company  &nbsp; <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                  {(!loginStudent && !loginCompany) && (<Link to="/company/login">Login</Link>)}
+                  {(!loginStudent && !loginCompany) && (<Link to="/company/register">Register</Link>)}
+                  <Link to="#">Link 3</Link>
+                </div>
+              </div> 
+            </li>
+            
             {(loginStudent || loginCompany)&& (<li className='nav-item'>
               <Link to='/logout' className='nav-links' onClick={closeMobileMenu}>
                 Logout
