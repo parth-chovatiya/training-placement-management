@@ -35,19 +35,6 @@ const useRowStyles = makeStyles({
     "& > *": {
       borderBottom: "unset",
     },
-    "& thead th": {
-      fontWeight: "600",
-      // color: theme.palette.primary.main,
-      backgroundColor: "#d5d9f0"
-      // color: theme.palette.primary.main,
-      // background: theme.palette.primary.light
-    },
-    "& tbody td": {
-      fontWeight: "400",
-    },
-    "& tbody tr:hover": {
-      backgroundColor: "#f2f4fb"
-    }
   },
 });
 
@@ -540,7 +527,7 @@ export default function PlacementRecords() {
       <hr />
       <br />
       <TableContainer component={Paper}>
-        <Table aria-label="collapsible table"  className={classeshead.table}>
+        <Table aria-label="collapsible table" className={classeshead.table}>
           <TableHead>
             <TableRow>
               <TableCell />

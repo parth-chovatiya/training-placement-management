@@ -10,6 +10,23 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 
 
+const useStylehead = makeStyles((theme) => ({
+  table: {
+    marginTop: theme.spacing(3),
+    "& thead th": {
+      fontSize: '18px',
+      backgroundColor: "#d5d9f0",
+    },
+    "& tbody td": {
+      fontWeight: "400",
+    },
+    "& tbody tr:hover": {
+      backgroundColor: "#f2f4fb"
+    }
+  }
+}))
+
+
 const columns = [
   { id: "fullName", label: "Full Name", minWidth: 150 },
   { id: "studentId", label: "Student Id No.", minWidth: 100 },
@@ -89,6 +106,7 @@ const useStyles = makeStyles({
 });
 
 export default function StickyHeadTable(props) {
+  const classeshead = useStylehead();
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -136,7 +154,7 @@ export default function StickyHeadTable(props) {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" className={classeshead.table}>
           <TableHead>
             <TableRow>
               {columns.map((column) => (

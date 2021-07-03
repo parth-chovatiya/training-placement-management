@@ -78,9 +78,9 @@ function Navbar() {
                 <button className="dropbtn nav-links">For Student &nbsp; <i className="fa fa-caret-down"></i>
                 </button>
                 <div className="dropdown-content">
+                  <Link to="/student/eligiblity">Eligibility</Link>
                   {(!loginStudent && !loginCompany) && (<Link to="/student/login">Login</Link>)}
                   {(!loginStudent && !loginCompany) && (<Link to="/student/register">Register</Link>)}
-                  <Link to="#">Link 3</Link>
                 </div>
               </div> 
             </li>
