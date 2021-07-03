@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import moment from 'moment'
+import moment from "moment";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -14,17 +14,17 @@ const useStylehead = makeStyles((theme) => ({
   table: {
     marginTop: theme.spacing(3),
     "& thead th": {
-      fontSize: '17px',
+      fontSize: "17px",
       backgroundColor: "#d5d9f0",
     },
     "& tbody td": {
       fontWeight: "400",
     },
     "& tbody tr:hover": {
-      backgroundColor: "#f2f4fb"
-    }
-  }
-}))
+      backgroundColor: "#f2f4fb",
+    },
+  },
+}));
 
 const columns = [
   { id: "orgname", label: "Organization Name", minWidth: 170 },
@@ -34,29 +34,23 @@ const columns = [
     id: "hrname",
     label: "HR Name",
     minWidth: 110,
-    // align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "hremail",
     label: "HR Email",
     minWidth: 150,
-    // align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "hrcontact",
     label: "HR Contact No.",
     minWidth: 140,
-    // align: "right",
-    // format: (value) => value.toFixed(2),
   },
   {
     id: "interviewDate",
     label: "Interview Date",
     minWidth: 170,
-    // align: "right",
-    // format: (value) => value.toFixed(2),
   },
 ];
 
@@ -74,7 +68,7 @@ export default function StickyHeadTable(props) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  // const rows=[]
+
   function createData(
     orgname,
     orgwebsite,
@@ -91,7 +85,7 @@ export default function StickyHeadTable(props) {
       hrname,
       hremail,
       hrcontact,
-      interviewDate: moment(interviewDate).utc().format('MM/DD/YYYY'),
+      interviewDate: moment(interviewDate).utc().format("MM/DD/YYYY"),
     };
   }
   console.log(props.data);
@@ -129,7 +123,11 @@ export default function StickyHeadTable(props) {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table" className={classeshead.table}>
+        <Table
+          stickyHeader
+          aria-label="sticky table"
+          className={classeshead.table}
+        >
           <TableHead>
             <TableRow>
               {columns.map((column) => (

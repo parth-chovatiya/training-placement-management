@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-
 import {
   Stepper,
   Step,
@@ -10,7 +8,7 @@ import {
   CircularProgress,
 } from "@material-ui/core";
 import { Formik, Form } from "formik";
-import Cookies from "js-cookie";
+import randomstring from "randomstring";
 
 import AddressForm from "./Forms/AboutYourSelfForm";
 import PaymentForm from "./Forms/AcademicDetailsForm";
@@ -46,7 +44,6 @@ export default function SRegisterForm() {
   const isLastStep = activeStep === steps.length - 1;
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
 
   function _sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -55,6 +52,7 @@ export default function SRegisterForm() {
   async function _submitForm(values, actions) {
     await _sleep(1000);
 
+    const password = randomstring.generate(7);
     const res = await fetch("/api/student/add", {
       method: "POST",
       headers: {
@@ -62,6 +60,7 @@ export default function SRegisterForm() {
       },
       body: JSON.stringify({
         values,
+        password: password,
       }),
     });
     const data = await res.json();
@@ -71,16 +70,11 @@ export default function SRegisterForm() {
     } else {
       window.alert("Successfull Registration");
       console.log("Successfull Registration");
-
-      // history.push('/student/login')
     }
-    // alert(JSON.stringify(values, null, 2));
 
-    const pass = Cookies.get("pass");
     setId(values.studentId);
-    setPassword(pass);
-    // console.log("Pass ---> ", pass)
-    // Cookies.remove('pass')
+    setPassword(password);
+
     actions.setSubmitting(false);
 
     setActiveStep(activeStep + 1);

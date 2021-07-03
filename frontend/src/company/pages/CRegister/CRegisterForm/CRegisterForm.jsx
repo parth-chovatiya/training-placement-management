@@ -8,6 +8,7 @@ import {
   CircularProgress,
 } from "@material-ui/core";
 import { Formik, Form } from "formik";
+import randomstring from "randomstring";
 
 import AboutCompanyForm from "./Forms/AboutCompanyForm";
 import CriteriaForm from "./Forms/CriteriaForm";
@@ -43,7 +44,6 @@ export default function SRegisterForm() {
   const isLastStep = activeStep === steps.length - 1;
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  // const history = useHistory();
 
   function _sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -52,6 +52,7 @@ export default function SRegisterForm() {
   async function _submitForm(values, actions) {
     await _sleep(1000);
 
+    const password = randomstring.generate(7);
     const res = await fetch("/api/company/add", {
       method: "POST",
       headers: {
@@ -59,6 +60,7 @@ export default function SRegisterForm() {
       },
       body: JSON.stringify({
         values,
+        password: password,
       }),
     });
     const data = await res.json();
@@ -68,13 +70,10 @@ export default function SRegisterForm() {
     } else {
       window.alert("Successfull Registration");
       console.log("Successfull Registration");
-
-      // history.push('/student/login')
     }
-    // alert(JSON.stringify(values, null, 2));
 
-    setId("19CP023");
-    setPassword("123456");
+    setId(values.hremail);
+    setPassword(password);
     actions.setSubmitting(false);
 
     setActiveStep(activeStep + 1);

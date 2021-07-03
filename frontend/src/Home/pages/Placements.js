@@ -4,26 +4,21 @@ import PlacementNav from "../components/PlacementNav";
 import TrainingPlaccement from "./TrainingPlacement";
 import PlacementRecords from "./PlacementRecords";
 import Recruiters from "./Recruiters";
-import RequiterSpeak from './RecuiterSpeak'
+import RequiterSpeak from "./RecuiterSpeak";
 
 import classes from "./Placement.module.css";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Placements = () => {
   return (
     <>
-      <Route>
+      <Router>
         <div className={`${classes.row}`}>
-          <div className={`${classes['col-1']}`}>
+          <div className={`${classes["col-1"]}`}>
             <PlacementNav />
           </div>
-          <div className={`${classes['col-2']}`}>
+          <div className={`${classes["col-2"]}`}>
             <Container maxWidth="xl">
               <Switch>
                 <Route path="/placements" exact>
@@ -42,7 +37,7 @@ const Placements = () => {
             </Container>
           </div>
         </div>
-      </Route>
+      </Router>
     </>
   );
 };

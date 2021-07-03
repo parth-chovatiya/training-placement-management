@@ -17,8 +17,6 @@ const {
   },
 } = checkoutFormModel;
 
-const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-
 export default [
   Yup.object().shape({
     [orgname.name]: Yup.string().required(`${orgname.requiredErrorMsg}`),

@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +20,7 @@ const SDashboard = () => {
   const classes = useStyles();
   const history = useHistory();
   const [userData, setUserdata] = useState({});
-  console.log(Cookies.get('login'))
+  console.log(Cookies.get("login"));
   const callDashboardPage = async () => {
     try {
       const res = await fetch("/api/student/dashboard", {
@@ -32,7 +32,7 @@ const SDashboard = () => {
         credentials: "include",
       });
       const data = await res.json();
-      // console.log(data)
+
       setUserdata(data);
       if (!res.status === 200) {
         const error = new Error(res.error);
@@ -46,8 +46,7 @@ const SDashboard = () => {
 
   useEffect(() => {
     callDashboardPage();
-    // console.log(userData)
-  }, []);
+  }, [callDashboardPage]);
 
   return (
     <Container maxWidth="lg">

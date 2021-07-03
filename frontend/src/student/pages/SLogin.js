@@ -7,15 +7,12 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-// import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Cookies from 'js-cookie'
-
+import Cookies from "js-cookie";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -29,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -47,7 +44,7 @@ export default function SLogin() {
     event.preventDefault();
     console.log(studentId);
     console.log(password);
-    // -------------------
+
     const res = await fetch("/api/student/login/", {
       method: "POST",
       headers: {
@@ -59,12 +56,11 @@ export default function SLogin() {
       }),
     });
     const data = await res.json();
-    console.log("data-->",data);
+    console.log("data-->", data);
     if (res.status === 400 || !data) {
       window.alert("Invalid Credentials");
     } else {
-      // dispatch({type: 'USER', payload: true})
-      Cookies.set('login', 'student');
+      Cookies.set("login", "student");
       window.alert("Login Successfully");
       history.push("/student/dashboard");
       window.location.reload();

@@ -8,12 +8,8 @@ function CheckoutSuccess(props) {
         Your data is saved.
       </Typography>
       <Typography variant="subtitle1">
-        Your Student ID : {props.id} <br />
+        Your ID : {props.id} <br />
         Your Password : {props.password} <br />
-        <br />
-        Your order number is #2001539. We have emailed your order confirmation,
-        and will send you an update when your order has shipped.
-        <br />
         <br />
         Kindly Login.
       </Typography>

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import StudentList from './StudentList'
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import StudentList from "./StudentList";
 import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
 import Container from "@material-ui/core/Container";
@@ -17,36 +17,36 @@ const useStyles = makeStyles((theme) => ({
 
 const CDashboard = () => {
   const classes = useStyles();
-  const history = useHistory()
+  const history = useHistory();
   const [userData, setUserdata] = useState({});
 
   const callDashboardPage = async () => {
-    try{
-      const res = await fetch('/api/company/dashboard', {
+    try {
+      const res = await fetch("/api/company/dashboard", {
         method: "GET",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        credentials: "include"
+        credentials: "include",
       });
       const data = await res.json();
-      console.log(data)
-      setUserdata(data)
-      if(!res.status === 200 || res.status === 401){
-        const error = new Error(res.error)
+      console.log(data);
+      setUserdata(data);
+      if (!res.status === 200 || res.status === 401) {
+        const error = new Error(res.error);
         throw error;
       }
-    }catch(err){
-      console.log(err)
-      history.push('/')
+    } catch (err) {
+      console.log(err);
+      history.push("/");
     }
-  }
+  };
 
   useEffect(() => {
-    callDashboardPage()
-    console.log(userData)
-  }, [])
+    callDashboardPage();
+    console.log(userData);
+  }, [callDashboardPage, userData]);
 
   return (
     <Container maxWidth="lg">
@@ -60,7 +60,7 @@ const CDashboard = () => {
 
       <StudentList data={userData} />
     </Container>
-  )
-}
+  );
+};
 
-export default CDashboard
+export default CDashboard;
