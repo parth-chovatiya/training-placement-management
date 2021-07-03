@@ -14,7 +14,7 @@ const useStylehead = makeStyles((theme) => ({
   table: {
     marginTop: theme.spacing(3),
     "& thead th": {
-      fontSize: '18px',
+      fontSize: '17px',
       backgroundColor: "#d5d9f0",
     },
     "& tbody td": {
