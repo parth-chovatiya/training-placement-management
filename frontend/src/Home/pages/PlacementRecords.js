@@ -10,16 +10,44 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
+const useStyle = makeStyles((theme) => ({
+  table: {
+    marginTop: theme.spacing(3),
+    "& thead th": {
+      fontSize: '19px',
+      backgroundColor: "#d5d9f0",
+    },
+    "& tbody td": {
+      fontWeight: "400",
+    },
+    "& tbody tr:hover": {
+      backgroundColor: "#f2f4fb"
+    }
+  }
+}))
 
 const useRowStyles = makeStyles({
   root: {
     "& > *": {
       borderBottom: "unset",
     },
+    "& thead th": {
+      fontWeight: "600",
+      // color: theme.palette.primary.main,
+      backgroundColor: "#d5d9f0"
+      // color: theme.palette.primary.main,
+      // background: theme.palette.primary.light
+    },
+    "& tbody td": {
+      fontWeight: "400",
+    },
+    "& tbody tr:hover": {
+      backgroundColor: "#f2f4fb"
+    }
   },
 });
 
@@ -448,9 +476,6 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              {/* <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography> */}
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
@@ -508,13 +533,14 @@ const rows = [
 ];
 
 export default function PlacementRecords() {
+  const classeshead = useStyle();
   return (
     <>
       <h1>Placement Record</h1>
       <hr />
       <br />
       <TableContainer component={Paper}>
-        <Table aria-label="collapsible table">
+        <Table aria-label="collapsible table"  className={classeshead.table}>
           <TableHead>
             <TableRow>
               <TableCell />
