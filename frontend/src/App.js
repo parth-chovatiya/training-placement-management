@@ -23,6 +23,8 @@ import SSRegisterForm from "./student/pages/SRegister/SRegisterForm";
 import CMaterialLayout from "./company/pages/CRegister/Layout/MaterialLayout";
 import CSRegisterForm from "./company/pages/CRegister/CRegisterForm";
 
+import StudentEligiblity from "./Home/pages/StudentEligiblity";
+
 import Footer from './shared/components/Footer/Footer'
 
 function App() {
@@ -51,6 +53,9 @@ function App() {
           </Route>
           <Route path="/logout">
             <Logout />
+          </Route>
+          <Route path="/student/eligiblity">
+            <StudentEligiblity />
           </Route>
           <Route path="/student/login">
             <SLogin />
