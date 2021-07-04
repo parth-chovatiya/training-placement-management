@@ -34,7 +34,7 @@ const data = {
     },
     dob: {
       name: "dob",
-      label: "Date of Birth *",
+      label: "Date of Birth ( MM/DD/YYYY ) *",
       requiredErrorMsg: "Date of Birth is required",
     },
     gender: {

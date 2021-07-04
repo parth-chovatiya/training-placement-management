@@ -66,8 +66,6 @@ export default function AboutYourSelfForm(props) {
             name={dob.name}
             label={dob.label}
             format="dd/MM/yy"
-            // views={['year', 'month']}
-            // minDate={new Date()}
             maxDate={new Date()}
             fullWidth
           />
