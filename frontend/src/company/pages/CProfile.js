@@ -41,14 +41,14 @@ export default function CProfile() {
   const classes = useStyles();
   const [stData, setstData] = useState({});
   const [state, setState] = useState({
-    ComputerEngineering: "",
-    CivilEngineering: "",
-    ElectricalEngineering: "",
-    ElectronicsEngineering: "",
-    ElectronicsandCommunicationEngineering: "",
-    MechanicalEngineering: "",
-    ProductionEngineering: "",
-    InformationTechnology: "",
+    ComputerEngineering: false,
+    CivilEngineering: false,
+    ElectricalEngineering: false,
+    ElectronicsEngineering: false,
+    ElectronicsandCommunicationEngineering: false,
+    MechanicalEngineering: false,
+    ProductionEngineering: false,
+    InformationTechnology: false,
   });
 
   const studentData = async (event) => {
@@ -64,15 +64,16 @@ export default function CProfile() {
   const test = async () => {
     const data = await studentData();
     setstData(data);
-    // setState(data.branch)
-    // setState.ComputerEngineering = data.branch[0]?true:false
-    // setState.CivilEngineering = data.branch[1]?true:false
-    // setState.ElectricalEngineering = data.branch[2]?true:false
-    // setState.ElectronicsEngineering = data.branch[3]?true:false
-    // setState.ElectronicsandCommunicationEngineering = data.branch[4]
-    // setState.MechanicalEngineering = data.branch[5]
-    // setState.ProductionEngineering = data.branch[6]
-    // setState.InformationTechnology = data.branch[7]
+    setState({
+      ComputerEngineering: data.branch[0]!=="false" ? true : false,
+      CivilEngineering: data.branch[1]!=="false" ? true : false,
+      ElectricalEngineering: data.branch[2]!=="false" ? true : false,
+      ElectronicsEngineering: data.branch[3]!=="false" ? true : false,
+      ElectronicsandCommunicationEngineering: data.branch[4]!=="false" ? true : false,
+      MechanicalEngineering: data.branch[5]!=="false" ? true : false,
+      ProductionEngineering: data.branch[6]!=="false" ? true : false,
+      InformationTechnology: data.branch[7]!=="false" ? true : false,
+    })
     // console.log("stData-->", data);
     console.log("state",state)
     // console.log("CP", (data.branch[0])!==false?true:false)
