@@ -12,7 +12,7 @@ const Footer = () => {
   const items = [];
   for (var i = 0; i < 128; i++) {
     items.push(
-      <div
+      <div key={i}
         className={classes.bubble}
         style={{
           "--size": `${2 + Math.random() * 4}rem`,

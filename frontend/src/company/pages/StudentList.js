@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import moment from 'moment'
+import moment from "moment";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -10,23 +10,21 @@ import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 
-
 const useStylehead = makeStyles((theme) => ({
   table: {
     marginTop: theme.spacing(3),
     "& thead th": {
-      fontSize: '17px',
+      fontSize: "17px",
       backgroundColor: "#d5d9f0",
     },
     "& tbody td": {
       fontWeight: "400",
     },
     "& tbody tr:hover": {
-      backgroundColor: "#f2f4fb"
-    }
-  }
-}))
-
+      backgroundColor: "#f2f4fb",
+    },
+  },
+}));
 
 const columns = [
   { id: "fullName", label: "Full Name", minWidth: 150 },
@@ -77,7 +75,7 @@ function createData(
   placed,
   company
 ) {
-  placed=placed?"True":"False"
+  placed = placed ? "True" : "False";
   return {
     fullName,
     studentId,
@@ -85,7 +83,7 @@ function createData(
     email,
     contact,
     gender,
-    dob: moment(dob).utc().format('MM/DD/YYYY'),
+    dob: moment(dob).utc().format("MM/DD/YYYY"),
     religion,
     address,
     aadhaarNo,
@@ -111,7 +109,7 @@ export default function StickyHeadTable(props) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  
+
   const rows = [];
   for (let i = 0; i < props.data.length; i++) {
     rows.push(
@@ -138,7 +136,7 @@ export default function StickyHeadTable(props) {
         props.data[i].department,
         props.data[i].passingyear,
         props.data[i].placed,
-        props.data[i].company,
+        props.data[i].company
       )
     );
   }
@@ -155,7 +153,11 @@ export default function StickyHeadTable(props) {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table" className={classeshead.table}>
+        <Table
+          stickyHeader
+          aria-label="sticky table"
+          className={classeshead.table}
+        >
           <TableHead>
             <TableRow>
               {columns.map((column) => (
@@ -174,7 +176,12 @@ export default function StickyHeadTable(props) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={row.studentId}
+                  >
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

@@ -160,4 +160,9 @@ router.get("/dashboard", student_auth, async (req, res) => {
   // res.send(req.rootUser);
 });
 
+router.get('/profile', student_auth, (req, res) => {
+  const student = req.rootUser;
+  res.status(200).send(student);
+})
+
 module.exports = router;

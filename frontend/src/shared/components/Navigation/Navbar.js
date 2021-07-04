@@ -88,38 +88,43 @@ function Navbar() {
                 Placements
               </Link>
             </li>
-            <li className="nav-item">
-              <div className="dropdown">
-                <button className="dropbtn nav-links">
-                  For Student &nbsp; <i className="fa fa-caret-down"></i>
-                </button>
-                <div className="dropdown-content">
-                  <Link to="/student/eligiblity">Eligibility</Link>
-                  {!loginStudent && !loginCompany && (
-                    <Link to="/student/login">Login</Link>
-                  )}
-                  {!loginStudent && !loginCompany && (
-                    <Link to="/student/register">Register</Link>
-                  )}
+            {(loginStudent || (!loginStudent && !loginCompany)) && (
+              <li className="nav-item">
+                <div className="dropdown">
+                  <button className="dropbtn nav-links">
+                    For Student &nbsp; <i className="fa fa-caret-down"></i>
+                  </button>
+                  <div className="dropdown-content">
+                    <Link to="/student/eligiblity">Eligibility</Link>
+                    {!loginStudent && !loginCompany && (
+                      <Link to="/student/login">Login</Link>
+                    )}
+                    {!loginStudent && !loginCompany && (
+                      <Link to="/student/register">Register</Link>
+                    )}
+                    {loginStudent && <Link to="/student/profile">Profile</Link>}
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li className="nav-item">
-              <div className="dropdown">
-                <button className="dropbtn nav-links">
-                  For Company &nbsp; <i className="fa fa-caret-down"></i>
-                </button>
-                <div className="dropdown-content">
-                  {!loginStudent && !loginCompany && (
-                    <Link to="/company/login">Login</Link>
-                  )}
-                  {!loginStudent && !loginCompany && (
-                    <Link to="/company/register">Register</Link>
-                  )}
-                  <Link to="#">Link 3</Link>
+              </li>
+            )}
+            {(loginCompany || (!loginStudent && !loginCompany)) && (
+              <li className="nav-item">
+                <div className="dropdown">
+                  <button className="dropbtn nav-links">
+                    For Company &nbsp; <i className="fa fa-caret-down"></i>
+                  </button>
+                  <div className="dropdown-content">
+                    {!loginStudent && !loginCompany && (
+                      <Link to="/company/login">Login</Link>
+                    )}
+                    {!loginStudent && !loginCompany && (
+                      <Link to="/company/register">Register</Link>
+                    )}
+                    {loginCompany && <Link to="/company/profile">Profile</Link>}
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            )}
 
             {(loginStudent || loginCompany) && (
               <li className="nav-item">

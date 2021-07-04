@@ -96,7 +96,7 @@ export default function StickyHeadTable(props) {
         props.data[i].orgname,
         props.data[i].website,
         props.data[i].address1 +
-          (props.data[i].address2 !== undefined ? props.data[i].website : "") +
+          (props.data[i].address2 !== undefined ? (" " + props.data[i].address2) : "") +
           " " +
           props.data[i].city +
           " " +
@@ -146,7 +146,7 @@ export default function StickyHeadTable(props) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.hremail}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (

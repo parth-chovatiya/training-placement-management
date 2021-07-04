@@ -10,12 +10,15 @@ import Home from "./Home/pages/Home";
 import Navbar from "./shared/components/Navigation/Navbar";
 import SLogin from "./student/pages/SLogin";
 import CLogin from "./company/pages/CLogin";
-import SDashboard from "./student/pages/SDashboard";
-import CDashboard from "./company/pages/CDashboard";
 import Login from './shared/pages/Login'
 import Logout from './shared/pages/Logout'
 import Placements from "./Home/pages/Placements";
-import "./App.css";
+
+import SDashboard from "./student/pages/SDashboard";
+import CDashboard from "./company/pages/CDashboard";
+
+import SProfile from "./student/pages/SProfile";
+import CProfile from "./company/pages/CProfile";
 
 import SMaterialLayout from "./student/pages/SRegister/Layout/MaterialLayout";
 import SSRegisterForm from "./student/pages/SRegister/SRegisterForm";
@@ -26,6 +29,8 @@ import CSRegisterForm from "./company/pages/CRegister/CRegisterForm";
 import StudentEligiblity from "./Home/pages/StudentEligiblity";
 
 import Footer from './shared/components/Footer/Footer'
+
+import "./App.css";
 
 function App() {
   return (
@@ -78,6 +83,12 @@ function App() {
           </Route>
           <Route path="/company/dashboard">
             <CDashboard />
+          </Route>
+          <Route path="/student/profile">
+            <SProfile />
+          </Route>
+          <Route path="/company/profile">
+            <CProfile />
           </Route>
           <Redirect to="/" />
         </Switch>
