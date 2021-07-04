@@ -153,4 +153,9 @@ router.get("/dashboard", company_auth, async (req, res) => {
   res.send(req.rootUser);
 });
 
+router.get('/profile', company_auth, (req, res) => {
+  const company = req.rootUser;
+  res.status(200).send(company);
+})
+
 module.exports = router;

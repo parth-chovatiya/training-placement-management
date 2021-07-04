@@ -232,27 +232,11 @@ export default function SProfile() {
                 required
                 fullWidth
                 id="address1"
-                label="Address Line 1"
+                label="Address"
                 name="address1"
                 autoComplete="address1"
                 InputLabelProps={{
                   shrink: stData["address1"] ? true : false,
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                value={stData["address2"]}
-                onChange={HandleInputChange}
-                required
-                fullWidth
-                id="address2"
-                label="Address Line 2"
-                name="address2"
-                autoComplete="address2"
-                InputLabelProps={{
-                  shrink: stData["address2"] ? true : false,
                 }}
               />
             </Grid>
