@@ -1,5 +1,5 @@
 import React from "react";
-import moment from 'moment'
+import moment from "moment";
 import { Typography, List, ListItem, ListItemText } from "@material-ui/core";
 import useStyles from "./styles";
 
@@ -35,7 +35,9 @@ function ProductDetails(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <ListItemText primary={"Date of Birth"} />
-        <Typography variant="body2">{moment(formValues.dob).utc().format('MM/DD/YYYY')}</Typography>
+        <Typography variant="body2">
+          {moment(formValues.dob).utc().format("MM/DD/YYYY")}
+        </Typography>
       </ListItem>
       <ListItem className={classes.listItem}>
         <ListItemText primary={"Gender"} />

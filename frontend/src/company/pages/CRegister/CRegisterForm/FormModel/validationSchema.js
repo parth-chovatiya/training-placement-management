@@ -17,7 +17,7 @@ const {
   },
 } = checkoutFormModel;
 
-export default [
+const data = [
   Yup.object().shape({
     [orgname.name]: Yup.string().required(`${orgname.requiredErrorMsg}`),
     [website.name]: Yup.string().required(`${website.requiredErrorMsg}`),
@@ -47,3 +47,5 @@ export default [
     [cgpa.name]: Yup.string().required(`${cgpa.requiredErrorMsg}`),
   }),
 ];
+
+export default data;

@@ -65,11 +65,12 @@ const Footer = () => {
               <b className={classes.title}>Virtual Tour</b>
               <div>
                 <iframe
+                  title="BVM Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.710404419791!2d72.92163631486343!3d22.552518539391208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e74c03b7749%3A0xab364c66fd4834c!2sBirla%20Vishvakarma%20Mahavidyalaya%20(BVM)!5e0!3m2!1sen!2sin!4v1625226092971!5m2!1sen!2sin"
                   width="400"
                   height="300"
                   style={{ border: 0 }}
-                  allowfullscreen=""
+                  allowFullScreen=""
                   loading="lazy"
                 ></iframe>
               </div>

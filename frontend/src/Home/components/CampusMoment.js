@@ -13,9 +13,9 @@ const CampusMoment = () => {
             height="230"
             src="https://www.youtube.com/embed/xbD9peQYeFw"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className={`${classes.row} ${classes["row-2"]}`}>
@@ -24,9 +24,9 @@ const CampusMoment = () => {
             height="230"
             src="https://www.youtube.com/embed/hqFIUhV8iA0"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <div className={`${classes.row} ${classes["row-3"]}`}>
@@ -35,9 +35,9 @@ const CampusMoment = () => {
             height="230"
             src="https://www.youtube.com/embed/ftZTccYX9oA"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>

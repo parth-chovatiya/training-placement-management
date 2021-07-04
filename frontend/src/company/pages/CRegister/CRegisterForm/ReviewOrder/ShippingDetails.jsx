@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { Typography, Grid, ListItem, ListItemText } from "@material-ui/core";
 import useStyles from "./styles";
 
@@ -12,7 +13,9 @@ function PaymentDetails(props) {
       </Typography>
       <ListItem className={classes.listItem}>
         <ListItemText primary={"Tentetive Interview Date"} />
-        <Typography variant="body2">{formValues.interviewDate}</Typography>
+        <Typography variant="body2">
+          {moment(formValues.interviewDate).utc().format("MM/DD/YYYY")}
+        </Typography>
       </ListItem>
       <ListItem className={classes.listItem}>
         <ListItemText primary={"MIN CGPA"} />

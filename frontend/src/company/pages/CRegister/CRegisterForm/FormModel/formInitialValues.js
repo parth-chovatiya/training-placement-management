@@ -23,7 +23,7 @@ const {
   },
 } = checkoutFormModel;
 
-export default {
+const data = {
   [orgname.name]: "",
   [website.name]: "",
   [hrname.name]: "",
@@ -44,3 +44,5 @@ export default {
   [informationTechnology.name]: false,
   [cgpa.name]: "",
 };
+
+export default data;

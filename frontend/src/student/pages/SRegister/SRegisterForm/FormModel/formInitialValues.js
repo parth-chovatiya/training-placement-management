@@ -21,7 +21,7 @@ const {
   },
 } = checkoutFormModel;
 
-export default {
+const data = {
   [fullName.name]: "",
   [studentId.name]: "",
   [enrolementNo.name]: "",
@@ -40,3 +40,5 @@ export default {
   [passingyear.name]: "",
   [cgpa.name]: "",
 };
+
+export default data;

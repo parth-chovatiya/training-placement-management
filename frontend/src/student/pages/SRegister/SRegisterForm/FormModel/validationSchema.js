@@ -23,7 +23,7 @@ const {
   },
 } = checkoutFormModel;
 
-export default [
+const data = [
   Yup.object().shape({
     [fullName.name]: Yup.string().required(`${fullName.requiredErrorMsg}`),
     [studentId.name]: Yup.string().required(`${studentId.requiredErrorMsg}`),
@@ -61,29 +61,13 @@ export default [
       .required(`${country.requiredErrorMsg}`),
   }),
   Yup.object().shape({
-    // [nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
     [coursetype.name]: Yup.string().required(`${coursetype.requiredErrorMsg}`),
     [department.name]: Yup.string().required(`${department.requiredErrorMsg}`),
     [passingyear.name]: Yup.number().required(
       `${passingyear.requiredErrorMsg}`
     ),
     [cgpa.name]: Yup.string().required(`${cgpa.requiredErrorMsg}`),
-    // [expiryDate.name]: Yup.string()
-    //   .nullable()
-    //   .required(`${expiryDate.requiredErrorMsg}`)
-    //   .test('expDate', expiryDate.invalidErrorMsg, val => {
-    //     if (val) {
-    //       const startDate = new Date();
-    //       const endDate = new Date(2050, 12, 31);
-    //       if (moment(val, moment.ISO_8601).isValid()) {
-    //         return moment(val).isBetween(startDate, endDate);
-    //       }
-    //       return false;
-    //     }
-    //     return false;
-    //   }),
-    // [cvv.name]: Yup.string()
-    //   .required(`${cvv.requiredErrorMsg}`)
-    //   .test('len', `${cvv.invalidErrorMsg}`, val => val && val.length === 3)
   }),
 ];
+
+export default data;

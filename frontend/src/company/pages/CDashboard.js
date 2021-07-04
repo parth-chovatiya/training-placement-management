@@ -46,7 +46,7 @@ const CDashboard = () => {
   useEffect(() => {
     callDashboardPage();
     console.log(userData);
-  }, [callDashboardPage, userData]);
+  }, []);
 
   return (
     <Container maxWidth="lg">

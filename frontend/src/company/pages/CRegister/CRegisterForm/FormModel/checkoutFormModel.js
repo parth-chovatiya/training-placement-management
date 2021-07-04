@@ -1,4 +1,4 @@
-export default {
+const data = {
   formId: "checkoutForm",
   formField: {
     orgname: {
@@ -10,7 +10,6 @@ export default {
       name: "website",
       label: "Website *",
       requiredErrorMsg: "Website is required",
-      // invalidErrorMsg: 'Aadhaar No. is not valid (It must be 12 digit)'
     },
     hrname: {
       name: "hrname",
@@ -99,7 +98,8 @@ export default {
       name: "cgpa",
       label: "CGPA *",
       requiredErrorMsg: "CGPA is required",
-      // invalidErrorMsg: 'CVV is invalid (e.g. 357)'
     },
   },
 };
+
+export default data

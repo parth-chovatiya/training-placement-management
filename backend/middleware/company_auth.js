@@ -15,9 +15,9 @@ const auth = async (req, res, next) => {
     const decoded = jwt.verify(token, config.get("jwtSecret"));
     console.log(decoded);
     const rootUser = await Company.findOne({ _id: decoded._id });
-    console.log(rootUser)
-    if(!rootUser){
-      throw new Error('Company Not Found.')
+    console.log(rootUser);
+    if (!rootUser) {
+      throw new Error("Company Not Found.");
     }
     req.rootUser = rootUser;
     console.log(rootUser);

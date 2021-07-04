@@ -1,4 +1,4 @@
-export default {
+const data = {
   formId: "checkoutForm",
   formField: {
     fullName: {
@@ -86,19 +86,18 @@ export default {
       name: "department",
       label: "Department *",
       requiredErrorMsg: "Department is required",
-      // invalidErrorMsg: 'Card number is not valid (e.g. 4111111111111)'
     },
     passingyear: {
       name: "passingyear",
       label: "Passing Year *",
       requiredErrorMsg: "Passing Year is required",
-      // invalidErrorMsg: 'Expiry date is not valid'
     },
     cgpa: {
       name: "cgpa",
       label: "CGPA *",
       requiredErrorMsg: "CGPA is required",
-      // invalidErrorMsg: 'CVV is invalid (e.g. 357)'
     },
   },
 };
+
+export default data;
