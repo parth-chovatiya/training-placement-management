@@ -12,11 +12,11 @@ export default function Example(props) {
   var items = [
     {
       img: <img src={bvm} alt="bvm" width="100%" height="580px" />,
-      name: "Veer Narmad South Gujarat University",
+      name: "Birla Vishvakarma Mahavidyalaya Engineering College",
     },
     {
-      img: <img src={UDAAN18} alt="AgniPath" width="100%" height="580px" />,
-      name: "AgniPath",
+      img: <img src={UDAAN18} alt="UDAAN18" width="100%" height="580px" />,
+      name: "UDAAN18",
     },
     {
       img: (
@@ -27,7 +27,7 @@ export default function Example(props) {
           height="580px"
         />
       ),
-      name: "VNSGU Dance Competition",
+      name: "BVM Reunion 2017",
     },
   ];
 
