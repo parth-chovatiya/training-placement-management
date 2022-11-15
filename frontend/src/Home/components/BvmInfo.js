@@ -12,9 +12,10 @@ const BvmInfo = () => {
       </div>
       <div className={`${classes.row} ${classes.info}`}>
         <h2>TRAINING AND PLACEMENT CELL</h2>
-        <p className={classes.clgname}>Birla Vishvakarma Mahavidyalaya Engineering College, Vallabh Vidyanagar</p>
-        <p>[An Autonomous Institution]</p>
-        <p>Managed by Charutar Vidyamandal</p>       
+        <p className={classes.clgname}>Veer Narmad South Gujarat University, Surat</p>
+        <p>Destination for the shining future
+VNSGU offers Research, PG, Integrated,UG, and Cerificate Programs</p>
+        <p>Managed by VNSGU</p>       
       </div>
     </div>
   )

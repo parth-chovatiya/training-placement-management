@@ -44,12 +44,12 @@ const Footer = () => {
 
                 <div className={`${classes["row-1-2"]}`}>
                   <b className={classes.title}>Contact Us</b>
-                  <p>Birla Vishvakarma Mahavidyalaya Engineering college</p>
+                  <p>Veer Narmad South Gujarat University</p>
                   <p>Post Box No. 20, </p>
-                  <p>Vallabh Vidyanagar, 388 120</p>
-                  <p>Dist: Anand(Gujarat) India</p>
-                  <p>Telephone: +91-2692-230104</p>
-                  <p>Email Id : principal@bvmengineering.ac.in</p>
+                  <p>Bharthana, Surat</p>
+                  <p>Dist: Surat(Gujarat) India</p>
+                  <p>Telephone: +91 (0261) 2388888</p>
+                  <p>Email Id : info@vnsgu.ac.in</p>
                 </div>
               </div>
               <div className={classes.social}>
@@ -64,15 +64,7 @@ const Footer = () => {
             <div className={`${classes.row} ${classes["row-2"]}`}>
               <b className={classes.title}>Virtual Tour</b>
               <div>
-                <iframe
-                  title="BVM Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.710404419791!2d72.92163631486343!3d22.552518539391208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e4e74c03b7749%3A0xab364c66fd4834c!2sBirla%20Vishvakarma%20Mahavidyalaya%20(BVM)!5e0!3m2!1sen!2sin!4v1625226092971!5m2!1sen!2sin"
-                  width="400"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.971697730119!2d72.78099961485658!3d21.153524585930935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04df15a760c8d%3A0x202f5132f3a6aa2d!2sVeer%20Narmad%20South%20Gujarat%20University!5e0!3m2!1sen!2sin!4v1662527775724!5m2!1sen!2sin" width="400" height="350" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>

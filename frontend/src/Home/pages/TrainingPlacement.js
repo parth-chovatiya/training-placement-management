@@ -14,11 +14,11 @@ const TrainingPlaccement = () => {
       <div className={classes.details}>
         <h1>Training and Placement Cell</h1>
         <br />
-        BVM, a premier engineering college, is considered to be top 1% among all
-        engineering colleges in Gujarat. Since inception, BVM has a record of
+        VNSGU, a premier engineering college, is considered to be top 1% among all
+        engineering colleges in Gujarat. Since inception, VNSGU has a record of
         best Placement all over Gujarat. Around 35+companies, including MNCs
         like Infosys, Essar, TCS, L&T, ABB, Torrent Power, Seimens, etc.. visit
-        BVM every year for placement.
+        VNSGU every year for placement.
         <br /> <br /> <br />
         Mr. Mehul Patel [I/C Training And Placement]
         <br /> <br />
